@@ -1,0 +1,18 @@
+{
+  "mathematical_functions": {
+    "factorial": {
+      "preconditions": [
+        "requires n >= 0;",
+        "requires n <= 20;"
+      ],
+      "postconditions": [
+        "ensures \\result >= 1;",
+        "ensures n == 0 ==> \\result == 1;"
+      ]
+    }
+  },
+  "default": {
+    "preconditions": ["requires parameters are valid;"],
+    "postconditions": ["ensures \\result is computed correctly;"]
+  }
+}

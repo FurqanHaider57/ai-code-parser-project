@@ -1,0 +1,1124 @@
+2025-08-15 03:37:22,902 - __main__ - INFO - Initializing AI Code Parser
+2025-08-15 03:37:22,902 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-15 03:37:22,902 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-15 03:37:22,903 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-15 03:37:22,903 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-15 03:37:22,903 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-15 03:37:22,903 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-15 03:37:22,903 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-15 03:37:22,905 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-15 03:37:22,905 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-15 03:37:22,905 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-15 03:37:22,905 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-15 03:37:23,047 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-15 03:37:23,048 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-15 03:37:23,088 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-15 03:37:23,141 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-15 03:37:23,141 - __main__ - INFO - All modules initialized successfully
+2025-08-15 03:37:23,142 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-15 03:37:23,142 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-15 03:37:23,142 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-15 03:37:23,142 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-15 03:37:23,142 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-15 03:37:23,142 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-15 03:37:23,142 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-15 03:37:23,143 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-15 03:37:23,143 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-15 03:37:23,143 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-15 03:37:23,143 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-15 03:37:23,143 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-15 03:37:23,144 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-15 03:37:23,144 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-15 03:37:23,144 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-15 03:37:23,144 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-15 03:37:23,145 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-15 03:37:23,145 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-15 03:37:23,145 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-15 04:05:02,287 - __main__ - INFO - Initializing AI Code Parser
+2025-08-15 04:05:02,289 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-15 04:05:02,295 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-15 04:05:02,296 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-15 04:05:02,296 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-15 04:05:02,296 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-15 04:05:02,296 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-15 04:05:02,296 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-15 04:05:02,302 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-15 04:05:02,302 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-15 04:05:02,303 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-15 04:05:02,304 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-15 04:05:02,511 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-15 04:05:02,512 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-15 04:05:02,568 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-15 04:05:02,658 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-15 04:05:02,658 - __main__ - INFO - All modules initialized successfully
+2025-08-15 04:05:02,658 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-15 04:05:02,659 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-15 04:05:02,659 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-15 04:05:02,659 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-15 04:05:02,659 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-15 04:05:02,660 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-15 04:05:02,660 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-15 04:05:02,660 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-15 04:05:02,660 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-15 04:05:02,660 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-15 04:05:02,661 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-15 04:05:02,661 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-15 04:05:02,661 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-15 04:05:02,661 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-15 04:05:02,661 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-15 04:05:02,662 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-15 04:05:02,663 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-15 04:05:02,663 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-15 04:05:02,663 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-15 04:06:32,443 - __main__ - INFO - Initializing AI Code Parser
+2025-08-15 04:06:32,443 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-15 04:06:32,444 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-15 04:06:32,444 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-15 04:06:32,444 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-15 04:06:32,444 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-15 04:06:32,444 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-15 04:06:32,445 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-15 04:06:32,445 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-15 04:06:32,445 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-15 04:06:32,445 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-15 04:06:32,445 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-15 04:06:32,541 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-15 04:06:32,542 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-15 04:06:32,596 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-15 04:06:32,659 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-15 04:06:32,660 - __main__ - INFO - All modules initialized successfully
+2025-08-15 04:06:32,660 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-15 04:06:32,660 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-15 04:06:32,660 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-15 04:06:32,661 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-15 04:06:32,661 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-15 04:06:32,661 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-15 04:06:32,661 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-15 04:06:32,661 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-15 04:06:32,662 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-15 04:06:32,662 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-15 04:06:32,662 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-15 04:06:32,662 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-15 04:06:32,663 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-15 04:06:32,663 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-15 04:06:32,663 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-15 04:06:32,663 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-15 04:06:32,664 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-15 04:06:32,664 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-15 04:06:32,665 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-15 04:10:10,595 - __main__ - INFO - Initializing AI Code Parser
+2025-08-15 04:10:10,595 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-15 04:10:10,596 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-15 04:10:10,596 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-15 04:10:10,596 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-15 04:10:10,596 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-15 04:10:10,596 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-15 04:10:10,596 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-15 04:10:10,597 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-15 04:10:10,597 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-15 04:10:10,597 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-15 04:10:10,597 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-15 04:10:10,664 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-15 04:10:10,665 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-15 04:10:10,695 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-15 04:10:10,746 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-15 04:10:10,746 - __main__ - INFO - All modules initialized successfully
+2025-08-15 04:10:10,746 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-15 04:10:10,746 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-15 04:10:10,746 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-15 04:10:10,746 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-15 04:10:10,746 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-15 04:10:10,746 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-15 04:10:10,746 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-15 04:10:10,746 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-15 04:10:10,746 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-15 04:10:10,746 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-15 04:10:10,747 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-15 04:10:10,747 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-15 04:10:10,747 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-15 04:10:10,747 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-15 04:10:10,747 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-15 04:10:10,747 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-15 04:10:10,747 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-15 04:10:10,747 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-15 04:10:10,748 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-15 04:10:47,799 - __main__ - INFO - Initializing AI Code Parser
+2025-08-15 04:10:47,799 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-15 04:10:47,799 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-15 04:10:47,799 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-15 04:10:47,799 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-15 04:10:47,800 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-15 04:10:47,800 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-15 04:10:47,800 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-15 04:10:47,800 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-15 04:10:47,800 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-15 04:10:47,800 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-15 04:10:47,800 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-15 04:10:47,865 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-15 04:10:47,865 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-15 04:10:47,899 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-15 04:10:47,951 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-15 04:10:47,951 - __main__ - INFO - All modules initialized successfully
+2025-08-15 04:10:47,951 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-15 04:10:47,951 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-15 04:10:47,951 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-15 04:10:47,951 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-15 04:10:47,951 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-15 04:10:47,951 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-15 04:10:47,951 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-15 04:10:47,951 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-15 04:10:47,951 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-15 04:10:47,951 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-15 04:10:47,951 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-15 04:10:47,951 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-15 04:10:47,952 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-15 04:10:47,952 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-15 04:10:47,952 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-15 04:10:47,952 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-15 04:10:47,952 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-15 04:10:47,952 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-15 04:10:47,952 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-15 23:20:31,798 - __main__ - INFO - Initializing AI Code Parser
+2025-08-15 23:20:31,799 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-15 23:20:31,800 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-15 23:20:31,800 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-15 23:20:31,800 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-15 23:20:31,800 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-15 23:20:31,800 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-15 23:20:31,800 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-15 23:20:31,803 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-15 23:20:31,803 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-15 23:20:31,803 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-15 23:20:31,804 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-15 23:20:31,956 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-15 23:20:31,956 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-15 23:20:32,511 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-15 23:20:32,558 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-15 23:20:32,558 - __main__ - INFO - All modules initialized successfully
+2025-08-15 23:20:32,558 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-15 23:20:32,558 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-15 23:20:32,558 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-15 23:20:32,558 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-15 23:20:32,558 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-15 23:20:32,559 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-15 23:20:32,559 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-15 23:20:32,559 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-15 23:20:32,559 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-15 23:20:32,559 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-15 23:20:32,559 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-15 23:20:32,559 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-15 23:20:32,559 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-15 23:20:32,559 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-15 23:20:32,559 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-15 23:20:32,559 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-15 23:20:32,560 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-15 23:20:32,560 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-15 23:20:32,560 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-15 23:32:14,114 - __main__ - INFO - Initializing AI Code Parser
+2025-08-15 23:32:14,114 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-15 23:32:14,115 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-15 23:32:14,115 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-15 23:32:14,115 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-15 23:32:14,115 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-15 23:32:14,115 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-15 23:32:14,115 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-15 23:32:14,119 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-15 23:32:14,119 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-15 23:32:14,119 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-15 23:32:14,119 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-15 23:32:14,254 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-15 23:32:14,254 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-15 23:32:14,723 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-15 23:32:14,768 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-15 23:32:14,769 - __main__ - INFO - All modules initialized successfully
+2025-08-15 23:32:14,769 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-15 23:32:14,769 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-15 23:32:14,769 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-15 23:32:14,769 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-15 23:32:14,769 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-15 23:32:14,769 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-15 23:32:14,769 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-15 23:32:14,769 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-15 23:32:14,769 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-15 23:32:14,769 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-15 23:32:14,769 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-15 23:32:14,769 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-15 23:32:14,769 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-15 23:32:14,770 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-15 23:32:14,770 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-15 23:32:14,770 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-15 23:32:14,770 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-15 23:32:14,770 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-15 23:32:14,770 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-15 23:33:05,139 - __main__ - INFO - Initializing AI Code Parser
+2025-08-15 23:33:05,139 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-15 23:33:05,139 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-15 23:33:05,140 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-15 23:33:05,140 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-15 23:33:05,140 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-15 23:33:05,140 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-15 23:33:05,140 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-15 23:33:05,140 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-15 23:33:05,140 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-15 23:33:05,141 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-15 23:33:05,141 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-15 23:33:05,212 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-15 23:33:05,212 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-15 23:33:05,237 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-15 23:33:05,283 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-15 23:33:05,283 - __main__ - INFO - All modules initialized successfully
+2025-08-15 23:33:05,283 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-15 23:33:05,283 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-15 23:33:05,283 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-15 23:33:05,283 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-15 23:33:05,283 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-15 23:33:05,283 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-15 23:33:05,283 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-15 23:33:05,283 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-15 23:33:05,283 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-15 23:33:05,284 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-15 23:33:05,284 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-15 23:33:05,284 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-15 23:33:05,284 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-15 23:33:05,284 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-15 23:33:05,284 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-15 23:33:05,284 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-15 23:33:05,284 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-15 23:33:05,285 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-15 23:33:05,285 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-15 23:34:25,212 - __main__ - INFO - Initializing AI Code Parser
+2025-08-15 23:34:25,213 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-15 23:34:25,213 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-15 23:34:25,213 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-15 23:34:25,213 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-15 23:34:25,213 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-15 23:34:25,213 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-15 23:34:25,213 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-15 23:34:25,214 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-15 23:34:25,214 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-15 23:34:25,214 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-15 23:34:25,214 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-15 23:34:25,272 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-15 23:34:25,272 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-15 23:34:25,304 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-15 23:34:25,349 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-15 23:34:25,349 - __main__ - INFO - All modules initialized successfully
+2025-08-15 23:34:25,349 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-15 23:34:25,349 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-15 23:34:25,349 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-15 23:34:25,349 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-15 23:34:25,349 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-15 23:34:25,349 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-15 23:34:25,349 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-15 23:34:25,349 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-15 23:34:25,350 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-15 23:34:25,350 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-15 23:34:25,350 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-15 23:34:25,350 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-15 23:34:25,350 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-15 23:34:25,350 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-15 23:34:25,350 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-15 23:34:25,350 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-15 23:34:25,351 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-15 23:34:25,351 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-15 23:34:25,351 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-16 00:24:31,862 - __main__ - INFO - Initializing AI Code Parser
+2025-08-16 00:24:31,863 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-16 00:24:31,863 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-16 00:24:31,863 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-16 00:24:31,863 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-16 00:24:31,864 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-16 00:24:31,864 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-16 00:24:31,864 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-16 00:24:31,864 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-16 00:24:31,865 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-16 00:24:31,865 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-16 00:24:31,865 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-16 00:24:32,059 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-16 00:24:32,059 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-16 00:24:32,397 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-16 00:24:32,470 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-16 00:24:32,470 - __main__ - INFO - All modules initialized successfully
+2025-08-16 00:24:32,471 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-16 00:24:32,471 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-16 00:24:32,471 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-16 00:24:32,471 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-16 00:24:32,471 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-16 00:24:32,471 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-16 00:24:32,471 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-16 00:24:32,472 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-16 00:24:32,472 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-16 00:24:32,472 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-16 00:24:32,472 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-16 00:24:32,472 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-16 00:24:32,472 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-16 00:24:32,472 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-16 00:24:32,473 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-16 00:24:32,473 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-16 00:24:32,474 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-16 00:24:32,474 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-16 00:24:32,474 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-16 00:28:42,133 - __main__ - INFO - Initializing AI Code Parser
+2025-08-16 00:28:42,133 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-16 00:28:42,134 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-16 00:28:42,134 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-16 00:28:42,134 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-16 00:28:42,134 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-16 00:28:42,134 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-16 00:28:42,134 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-16 00:28:42,134 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-16 00:28:42,135 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-16 00:28:42,135 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-16 00:28:42,135 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-16 00:28:42,218 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-16 00:28:42,218 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-16 00:28:42,345 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-16 00:28:42,398 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-16 00:28:42,398 - __main__ - INFO - All modules initialized successfully
+2025-08-16 00:28:42,398 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-16 00:28:42,398 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-16 00:28:42,398 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-16 00:28:42,399 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-16 00:28:42,399 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-16 00:28:42,399 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-16 00:28:42,399 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-16 00:28:42,399 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-16 00:28:42,399 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-16 00:28:42,399 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-16 00:28:42,400 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-16 00:28:42,400 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-16 00:28:42,400 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-16 00:28:42,400 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-16 00:28:42,400 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-16 00:28:42,400 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-16 00:28:42,401 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-16 00:28:42,401 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-16 00:28:42,401 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-16 00:29:16,749 - __main__ - INFO - Initializing AI Code Parser
+2025-08-16 00:29:16,749 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-16 00:29:16,749 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-16 00:29:16,750 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-16 00:29:16,750 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-16 00:29:16,750 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-16 00:29:16,750 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-16 00:29:16,750 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-16 00:29:16,750 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-16 00:29:16,750 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-16 00:29:16,750 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-16 00:29:16,750 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-16 00:29:16,806 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-16 00:29:16,806 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-16 00:29:16,852 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-16 00:29:16,903 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-16 00:29:16,903 - __main__ - INFO - All modules initialized successfully
+2025-08-16 00:29:16,903 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-16 00:29:16,903 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-16 00:29:16,903 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-16 00:29:16,903 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-16 00:29:16,903 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-16 00:29:16,903 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-16 00:29:16,903 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-16 00:29:16,904 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-16 00:29:16,904 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-16 00:29:16,904 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-16 00:29:16,904 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-16 00:29:16,904 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-16 00:29:16,904 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-16 00:29:16,904 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-16 00:29:16,904 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-16 00:29:16,904 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-16 00:29:16,905 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-16 00:29:16,905 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-16 00:29:16,905 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-16 23:53:22,443 - __main__ - INFO - Initializing AI Code Parser
+2025-08-16 23:53:22,444 - modules.module1_debugging.ai_debugger - INFO - 🚀 Initializing Enhanced AI Debugger (Phase 3)
+2025-08-16 23:53:22,532 - modules.module1_debugging.llm_integration.llm_client - INFO - ✅ OpenAI client (Ollama) initialized
+2025-08-16 23:53:22,848 - modules.module1_debugging.ai_debugger - INFO - ✅ Enhanced AI Debugger initialized
+2025-08-16 23:53:22,848 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-16 23:53:22,850 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-16 23:53:22,850 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-16 23:53:22,850 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-16 23:53:22,850 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-16 23:53:23,004 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-16 23:53:23,004 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-16 23:53:23,030 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-16 23:53:23,080 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-16 23:53:23,080 - __main__ - INFO - All modules initialized successfully
+2025-08-16 23:53:23,080 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-16 23:53:23,080 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-16 23:53:23,080 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-16 23:53:23,081 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-16 23:53:23,081 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-16 23:53:23,081 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-16 23:53:23,081 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-16 23:53:23,081 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-16 23:53:23,081 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-16 23:53:23,081 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-16 23:53:23,081 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-16 23:53:23,081 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-16 23:53:23,081 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-16 23:53:23,082 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-16 23:53:23,082 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-16 23:53:23,082 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-16 23:58:14,616 - __main__ - INFO - Initializing AI Code Parser
+2025-08-16 23:58:14,616 - modules.module1_debugging.ai_debugger - INFO - 🚀 Initializing Enhanced AI Debugger (Phase 3)
+2025-08-16 23:58:14,671 - modules.module1_debugging.llm_integration.llm_client - INFO - ✅ OpenAI client (Ollama) initialized
+2025-08-16 23:58:14,775 - modules.module1_debugging.ai_debugger - INFO - ✅ Enhanced AI Debugger initialized
+2025-08-16 23:58:14,775 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-16 23:58:14,776 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-16 23:58:14,776 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-16 23:58:14,776 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-16 23:58:14,776 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-16 23:58:14,829 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-16 23:58:14,830 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-16 23:58:14,850 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-16 23:58:14,897 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-16 23:58:14,897 - __main__ - INFO - All modules initialized successfully
+2025-08-16 23:58:14,897 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-16 23:58:14,898 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-16 23:58:14,898 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-16 23:58:14,898 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-16 23:58:14,898 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-16 23:58:14,898 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-16 23:58:14,898 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-16 23:58:14,898 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-16 23:58:14,898 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-16 23:58:14,898 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-16 23:58:14,898 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-16 23:58:14,898 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-16 23:58:14,899 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-16 23:58:14,899 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-16 23:58:14,899 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-16 23:58:14,899 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-17 00:05:45,451 - __main__ - INFO - Initializing AI Code Parser
+2025-08-17 00:05:45,451 - modules.module1_debugging.ai_debugger - INFO - 🚀 Initializing Enhanced AI Debugger (Phase 3)
+2025-08-17 00:05:45,507 - modules.module1_debugging.llm_integration.llm_client - INFO - ✅ OpenAI client (Ollama) initialized
+2025-08-17 00:05:45,612 - modules.module1_debugging.ai_debugger - INFO - ✅ Enhanced AI Debugger initialized
+2025-08-17 00:05:45,612 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-17 00:05:45,613 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-17 00:05:45,613 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-17 00:05:45,613 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-17 00:05:45,613 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-17 00:05:45,665 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-17 00:05:45,665 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-17 00:05:45,693 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-17 00:05:45,758 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-17 00:05:45,758 - __main__ - INFO - All modules initialized successfully
+2025-08-17 00:05:45,758 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-17 00:05:45,759 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-17 00:05:45,759 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-17 00:05:45,759 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-17 00:05:45,759 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-17 00:05:45,759 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-17 00:05:45,759 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-17 00:05:45,759 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-17 00:05:45,759 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-17 00:05:45,759 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-17 00:05:45,759 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-17 00:05:45,759 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-17 00:05:45,759 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-17 00:05:45,760 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-17 00:05:45,760 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-17 00:05:45,760 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-17 00:11:41,829 - __main__ - INFO - Initializing AI Code Parser
+2025-08-17 00:11:41,829 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-17 00:11:41,829 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-17 00:11:41,829 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-17 00:11:41,829 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-17 00:11:41,829 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-17 00:11:41,830 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-17 00:11:41,830 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-17 00:11:41,830 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-17 00:11:41,830 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-17 00:11:41,830 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-17 00:11:41,830 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-17 00:11:41,888 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-17 00:11:41,888 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-17 00:11:41,916 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-17 00:11:41,994 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-17 00:11:41,995 - __main__ - INFO - All modules initialized successfully
+2025-08-17 00:11:41,995 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-17 00:11:41,995 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-17 00:11:41,996 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-17 00:11:41,996 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-17 00:11:41,996 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-17 00:11:41,996 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-17 00:11:41,996 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-17 00:11:41,996 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-17 00:11:41,996 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-17 00:11:41,996 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-17 00:11:41,996 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-17 00:11:41,997 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-17 00:11:41,997 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-17 00:11:41,997 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-17 00:11:41,997 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-17 00:11:41,997 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-17 00:11:41,998 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-17 00:11:41,998 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-17 00:11:41,998 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-17 00:13:57,230 - __main__ - INFO - Initializing AI Code Parser
+2025-08-17 00:13:57,231 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-17 00:13:57,231 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-17 00:13:57,231 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-17 00:13:57,231 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-17 00:13:57,231 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-17 00:13:57,231 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-17 00:13:57,231 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-17 00:13:57,232 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-17 00:13:57,232 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-17 00:13:57,232 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-17 00:13:57,232 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-17 00:13:57,283 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-17 00:13:57,283 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-17 00:13:57,313 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-17 00:13:57,349 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-17 00:13:57,349 - __main__ - INFO - All modules initialized successfully
+2025-08-17 00:13:57,349 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-17 00:13:57,349 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-17 00:13:57,349 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-17 00:13:57,349 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-17 00:13:57,350 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-17 00:13:57,350 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-17 00:13:57,350 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-17 00:13:57,350 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-17 00:13:57,350 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-17 00:13:57,350 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-17 00:13:57,350 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-17 00:13:57,350 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-17 00:13:57,350 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-17 00:13:57,351 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-17 00:13:57,351 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-17 00:13:57,351 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-17 00:13:57,351 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-17 00:13:57,351 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-17 00:13:57,351 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-17 00:51:05,487 - __main__ - INFO - Initializing AI Code Parser
+2025-08-17 00:51:05,488 - modules.module1_debugging.ai_debugger - INFO - 🚀 Initializing Enhanced AI Debugger (Phase 3)
+2025-08-17 00:51:05,581 - modules.module1_debugging.llm_integration.llm_client - INFO - ✅ OpenAI client (Ollama) initialized
+2025-08-17 00:51:05,896 - modules.module1_debugging.ai_debugger - INFO - ✅ Enhanced AI Debugger initialized
+2025-08-17 00:51:05,896 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-17 00:51:05,897 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-17 00:51:05,897 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-17 00:51:05,897 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-17 00:51:05,897 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-17 00:51:06,028 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-17 00:51:06,029 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-17 00:51:06,267 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-17 00:51:06,333 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-17 00:51:06,334 - __main__ - INFO - All modules initialized successfully
+2025-08-17 00:51:06,334 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-17 00:51:06,335 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-17 00:51:06,335 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-17 00:51:06,335 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-17 00:51:06,335 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-17 00:51:06,336 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-17 00:51:06,336 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-17 00:51:06,336 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-17 00:51:06,336 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-17 00:51:06,336 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-17 00:51:06,336 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-17 00:51:06,336 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-17 00:51:06,337 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-17 00:51:06,338 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-17 00:51:06,338 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-17 00:51:06,338 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-19 16:05:23,834 - __main__ - INFO - Initializing AI Code Parser
+2025-08-19 16:05:23,837 - modules.module1_debugging.ai_debugger - INFO - 🚀 Initializing Enhanced AI Debugger (Phase 3)
+2025-08-19 16:05:25,109 - modules.module1_debugging.llm_integration.llm_client - INFO - ✅ OpenAI client (Ollama) initialized
+2025-08-19 16:05:25,367 - modules.module1_debugging.ai_debugger - INFO - ✅ Enhanced AI Debugger initialized
+2025-08-19 16:05:25,367 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-19 16:05:25,371 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-19 16:05:25,371 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-19 16:05:25,372 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-19 16:05:25,372 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-19 16:05:25,464 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-19 16:05:25,464 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-19 16:05:25,551 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-19 16:05:25,698 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-19 16:05:25,698 - __main__ - INFO - All modules initialized successfully
+2025-08-19 16:05:25,699 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-19 16:05:25,699 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-19 16:05:25,699 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-19 16:05:25,699 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-19 16:05:25,699 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-19 16:05:25,700 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-19 16:05:25,700 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-19 16:05:25,700 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-19 16:05:25,700 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-19 16:05:25,700 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-19 16:05:25,701 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-19 16:05:25,701 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-19 16:05:25,701 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-19 16:05:25,702 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-19 16:05:25,702 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-19 16:05:25,702 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-19 16:23:00,955 - __main__ - INFO - Initializing AI Code Parser
+2025-08-19 16:23:00,957 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-19 16:23:00,957 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-19 16:23:00,957 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-19 16:23:00,958 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-19 16:23:00,958 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-19 16:23:00,958 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-19 16:23:00,958 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-19 16:23:00,961 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-19 16:23:00,961 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-19 16:23:00,961 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-19 16:23:00,961 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-19 16:23:01,048 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-19 16:23:01,048 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-19 16:23:01,098 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-19 16:23:01,303 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-19 16:23:01,303 - __main__ - INFO - All modules initialized successfully
+2025-08-19 16:23:01,304 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-19 16:23:01,304 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-19 16:23:01,304 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-19 16:23:01,304 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-19 16:23:01,305 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-19 16:23:01,305 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-19 16:23:01,305 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-19 16:23:01,305 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-19 16:23:01,305 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-19 16:23:01,306 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-19 16:23:01,306 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-19 16:23:01,306 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-19 16:23:01,306 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-19 16:23:01,306 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-19 16:23:01,306 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-19 16:23:01,307 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-19 16:23:01,307 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-19 16:23:01,308 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-19 16:23:01,308 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-20 02:51:53,736 - __main__ - INFO - Initializing AI Code Parser
+2025-08-20 02:51:53,736 - modules.module1_debugging.ai_debugger - INFO - 🚀 Initializing Enhanced AI Debugger (Phase 3)
+2025-08-20 02:51:53,814 - modules.module1_debugging.llm_integration.llm_client - INFO - ✅ OpenAI client (Ollama) initialized
+2025-08-20 02:51:54,211 - modules.module1_debugging.ai_debugger - INFO - ✅ Enhanced AI Debugger initialized
+2025-08-20 02:51:54,211 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-20 02:51:54,213 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-20 02:51:54,213 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-20 02:51:54,213 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-20 02:51:54,213 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-20 02:51:54,347 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-20 02:51:54,347 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-20 02:51:54,375 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-20 02:51:54,417 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-20 02:51:54,417 - __main__ - INFO - All modules initialized successfully
+2025-08-20 02:51:54,417 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-20 02:51:54,417 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-20 02:51:54,417 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-20 02:51:54,417 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-20 02:51:54,417 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-20 02:51:54,417 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-20 02:51:54,418 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-20 02:51:54,418 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-20 02:51:54,418 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-20 02:51:54,418 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-20 02:51:54,418 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-20 02:51:54,418 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-20 02:51:54,418 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-20 02:51:54,419 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-20 02:51:54,419 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-20 02:51:54,419 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-25 23:34:03,179 - __main__ - INFO - Initializing AI Code Parser
+2025-08-25 23:34:03,187 - modules.module1_debugging.ai_debugger - INFO - 🚀 Initializing Enhanced AI Debugger (Phase 3)
+2025-08-25 23:34:03,468 - modules.module1_debugging.llm_integration.llm_client - INFO - ✅ OpenAI client (Ollama) initialized
+2025-08-25 23:34:04,208 - modules.module1_debugging.ai_debugger - INFO - ✅ Enhanced AI Debugger initialized
+2025-08-25 23:34:04,208 - modules.module2_nlp.nlp_test_generator - INFO - 🚀 Initializing Enhanced NLP Test Generator (Phase 3)
+2025-08-25 23:34:04,211 - modules.module2_nlp.nlp_test_generator - INFO - 💻 Using CPU for computations
+2025-08-25 23:34:04,212 - modules.module2_nlp.nlp_test_generator - INFO - 📥 Loading model: t5-small
+2025-08-25 23:34:07,790 - modules.module2_nlp.nlp_test_generator - INFO - ✅ NLP models loaded successfully
+2025-08-25 23:34:07,791 - modules.module2_nlp.nlp_test_generator - WARNING - Code directory ../../data/sample_code does not exist
+2025-08-25 23:34:07,791 - modules.module2_nlp.nlp_test_generator - INFO - ✅ Enhanced NLP Test Generator initialized with 0 functions discovered
+2025-08-25 23:34:07,792 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-25 23:34:08,250 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-25 23:34:08,250 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-25 23:34:09,467 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-25 23:34:09,711 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-25 23:34:09,712 - __main__ - INFO - All modules initialized successfully
+2025-08-25 23:34:09,712 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-25 23:34:09,713 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-25 23:34:09,714 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-25 23:34:09,714 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-25 23:34:09,715 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-25 23:34:09,716 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-25 23:34:09,717 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-25 23:34:09,718 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-25 23:34:09,718 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-25 23:34:09,719 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-25 23:34:09,724 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-25 23:34:09,726 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-25 23:34:09,726 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-25 23:37:32,622 - __main__ - INFO - Initializing AI Code Parser
+2025-08-25 23:37:32,622 - modules.module1_debugging.ai_debugger - INFO - 🚀 Initializing Enhanced AI Debugger (Phase 3)
+2025-08-25 23:37:32,773 - modules.module1_debugging.llm_integration.llm_client - INFO - ✅ OpenAI client (Ollama) initialized
+2025-08-25 23:37:33,116 - modules.module1_debugging.ai_debugger - INFO - ✅ Enhanced AI Debugger initialized
+2025-08-25 23:37:33,117 - modules.module2_nlp.nlp_test_generator - INFO - 🚀 Initializing Enhanced NLP Test Generator (Phase 3)
+2025-08-25 23:37:33,118 - modules.module2_nlp.nlp_test_generator - INFO - 💻 Using CPU for computations
+2025-08-25 23:37:33,119 - modules.module2_nlp.nlp_test_generator - INFO - 📥 Loading model: t5-small
+2025-08-25 23:37:35,634 - modules.module2_nlp.nlp_test_generator - INFO - ✅ NLP models loaded successfully
+2025-08-25 23:37:35,635 - modules.module2_nlp.nlp_test_generator - WARNING - Code directory ../../data/sample_code does not exist
+2025-08-25 23:37:35,635 - modules.module2_nlp.nlp_test_generator - INFO - ✅ Enhanced NLP Test Generator initialized with 0 functions discovered
+2025-08-25 23:37:35,636 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-25 23:37:35,926 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-25 23:37:35,926 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-25 23:37:36,030 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-25 23:37:36,140 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-25 23:37:36,141 - __main__ - INFO - All modules initialized successfully
+2025-08-25 23:37:36,141 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-25 23:37:36,141 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-25 23:37:36,142 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-25 23:37:36,142 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-25 23:37:36,142 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-25 23:37:36,142 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-25 23:37:36,143 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-25 23:37:36,143 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-25 23:37:36,143 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-25 23:37:36,143 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-25 23:37:36,145 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-25 23:37:36,145 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-25 23:37:36,146 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-27 15:56:54,608 - __main__ - INFO - Initializing AI Code Parser
+2025-08-27 15:56:54,610 - modules.module1_debugging.ai_debugger - INFO - 🚀 Initializing Enhanced AI Debugger (Phase 3)
+2025-08-27 15:56:54,698 - modules.module1_debugging.llm_integration.llm_client - INFO - ✅ OpenAI client (Ollama) initialized
+2025-08-27 15:56:55,010 - modules.module1_debugging.ai_debugger - INFO - ✅ Enhanced AI Debugger initialized
+2025-08-27 15:56:55,010 - modules.module2_nlp.nlp_test_generator - INFO - 🚀 Initializing Enhanced NLP Test Generator (Phase 3)
+2025-08-27 15:56:55,013 - modules.module2_nlp.nlp_test_generator - INFO - 💻 Using CPU for computations
+2025-08-27 15:56:55,013 - modules.module2_nlp.nlp_test_generator - INFO - 📥 Loading model: t5-small
+2025-08-27 15:56:57,337 - modules.module2_nlp.nlp_test_generator - INFO - ✅ NLP models loaded successfully
+2025-08-27 15:56:57,338 - modules.module2_nlp.nlp_test_generator - WARNING - Code directory ../../data/sample_code does not exist
+2025-08-27 15:56:57,338 - modules.module2_nlp.nlp_test_generator - INFO - ✅ Enhanced NLP Test Generator initialized with 0 functions discovered
+2025-08-27 15:56:57,338 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-27 15:56:57,497 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-27 15:56:57,497 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-27 15:56:58,071 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-27 15:56:58,124 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-27 15:56:58,124 - __main__ - INFO - All modules initialized successfully
+2025-08-27 15:56:58,124 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-27 15:56:58,124 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-27 15:56:58,124 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-27 15:56:58,125 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-27 15:56:58,125 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-27 15:56:58,125 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-27 15:56:58,125 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-27 15:56:58,125 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-27 15:56:58,125 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-27 15:56:58,125 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-27 15:56:58,125 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-27 15:56:58,126 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-27 15:56:58,126 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-27 16:04:26,670 - __main__ - INFO - Initializing AI Code Parser
+2025-08-27 16:04:26,670 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-27 16:04:26,670 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-27 16:04:26,671 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-27 16:04:26,671 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-27 16:04:26,671 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-27 16:04:26,671 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-27 16:04:26,671 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-27 16:04:26,672 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-27 16:04:26,672 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-27 16:04:26,672 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-27 16:04:26,672 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-27 16:04:26,748 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-27 16:04:26,749 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-27 16:04:26,814 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-27 16:04:26,893 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-27 16:04:26,894 - __main__ - INFO - All modules initialized successfully
+2025-08-27 16:04:26,894 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-27 16:04:26,894 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-27 16:04:26,894 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-27 16:04:26,894 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-27 16:04:26,895 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-27 16:04:26,895 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-27 16:04:26,895 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-27 16:04:26,895 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-27 16:04:26,895 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-27 16:04:26,895 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-27 16:04:26,896 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-27 16:04:26,896 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-27 16:04:26,896 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-27 16:04:26,896 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-27 16:04:26,896 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-27 16:04:26,897 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-27 16:04:26,897 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-27 16:04:26,898 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-27 16:04:26,898 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-27 16:04:57,392 - __main__ - INFO - Initializing AI Code Parser
+2025-08-27 16:04:57,392 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-27 16:04:57,392 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-27 16:04:57,393 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-27 16:04:57,393 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-27 16:04:57,393 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-27 16:04:57,393 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-27 16:04:57,393 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-27 16:04:57,393 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-27 16:04:57,394 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-27 16:04:57,394 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-27 16:04:57,394 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-27 16:04:57,448 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-27 16:04:57,449 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-27 16:04:57,473 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-27 16:04:57,537 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-27 16:04:57,538 - __main__ - INFO - All modules initialized successfully
+2025-08-27 16:04:57,538 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-27 16:04:57,538 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-27 16:04:57,538 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-27 16:04:57,538 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-27 16:04:57,538 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-27 16:04:57,538 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-27 16:04:57,538 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-27 16:04:57,539 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-27 16:04:57,539 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-27 16:04:57,539 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-27 16:04:57,539 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-27 16:04:57,539 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-27 16:04:57,539 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-27 16:04:57,539 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-27 16:04:57,539 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-27 16:04:57,539 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-27 16:04:57,540 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-27 16:04:57,540 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-27 16:04:57,540 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-28 15:17:50,377 - __main__ - INFO - Initializing AI Code Parser
+2025-08-28 15:17:50,379 - modules.module1_debugging.ai_debugger - INFO - 🚀 Initializing Enhanced AI Debugger (Phase 3)
+2025-08-28 15:17:50,601 - modules.module1_debugging.llm_integration.llm_client - INFO - ✅ OpenAI client (Ollama) initialized
+2025-08-28 15:17:51,095 - modules.module1_debugging.ai_debugger - INFO - ✅ Enhanced AI Debugger initialized
+2025-08-28 15:17:51,095 - modules.module2_nlp.nlp_test_generator - INFO - 🚀 Initializing Enhanced NLP Test Generator (Phase 3)
+2025-08-28 15:17:51,098 - modules.module2_nlp.nlp_test_generator - INFO - 💻 Using CPU for computations
+2025-08-28 15:17:51,099 - modules.module2_nlp.nlp_test_generator - INFO - 📥 Loading model: t5-small
+2025-08-28 15:17:54,195 - modules.module2_nlp.nlp_test_generator - INFO - ✅ NLP models loaded successfully
+2025-08-28 15:17:54,196 - modules.module2_nlp.nlp_test_generator - WARNING - Code directory ../../data/sample_code does not exist
+2025-08-28 15:17:54,197 - modules.module2_nlp.nlp_test_generator - INFO - ✅ Enhanced NLP Test Generator initialized with 0 functions discovered
+2025-08-28 15:17:54,197 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-28 15:17:54,515 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-28 15:17:54,516 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-28 15:17:55,296 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-28 15:17:55,440 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-28 15:17:55,441 - __main__ - INFO - All modules initialized successfully
+2025-08-28 15:17:55,441 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-28 15:17:55,441 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-28 15:17:55,442 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-28 15:17:55,442 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-28 15:17:55,443 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-28 15:17:55,443 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-28 15:17:55,443 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-28 15:17:55,444 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-28 15:17:55,444 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-28 15:17:55,444 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-28 15:17:55,447 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-28 15:17:55,447 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-28 15:17:55,448 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-28 15:26:06,069 - __main__ - INFO - Initializing AI Code Parser
+2025-08-28 15:26:06,069 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-28 15:26:06,070 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-28 15:26:06,071 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-28 15:26:06,071 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-28 15:26:06,071 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-28 15:26:06,072 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-28 15:26:06,072 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-28 15:26:06,073 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-28 15:26:06,073 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-28 15:26:06,073 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-28 15:26:06,074 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-28 15:26:06,195 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-28 15:26:06,195 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-28 15:26:06,275 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-28 15:26:06,381 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-28 15:26:06,381 - __main__ - INFO - All modules initialized successfully
+2025-08-28 15:26:06,381 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-28 15:26:06,382 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-28 15:26:06,382 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-28 15:26:06,382 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-28 15:26:06,383 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-28 15:26:06,383 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-28 15:26:06,383 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-28 15:26:06,383 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-28 15:26:06,384 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-28 15:26:06,384 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-28 15:26:06,384 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-28 15:26:06,385 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-28 15:26:06,385 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-28 15:26:06,385 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-28 15:26:06,385 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-28 15:26:06,386 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-28 15:26:06,387 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-28 15:26:06,387 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-28 15:26:06,387 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-28 15:36:59,409 - __main__ - INFO - Initializing AI Code Parser
+2025-08-28 15:36:59,409 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-28 15:36:59,410 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-28 15:36:59,411 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-28 15:36:59,412 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-28 15:36:59,412 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-28 15:36:59,413 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-28 15:36:59,414 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-28 15:36:59,419 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-28 15:36:59,419 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-28 15:36:59,420 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-28 15:36:59,421 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-28 15:36:59,608 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-28 15:36:59,608 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-28 15:36:59,732 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-28 15:36:59,902 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-28 15:36:59,903 - __main__ - INFO - All modules initialized successfully
+2025-08-28 15:36:59,903 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-28 15:36:59,904 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-28 15:36:59,904 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-28 15:36:59,905 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-28 15:36:59,905 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-28 15:36:59,906 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-28 15:36:59,906 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-28 15:36:59,907 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-28 15:36:59,908 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-28 15:36:59,908 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-28 15:36:59,909 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-28 15:36:59,909 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-28 15:36:59,910 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-28 15:36:59,911 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-28 15:36:59,911 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-28 15:36:59,912 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-28 15:36:59,914 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-28 15:36:59,915 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-28 15:36:59,915 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-30 14:58:47,563 - __main__ - INFO - Initializing AI Code Parser
+2025-08-30 14:58:47,564 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-30 14:58:47,565 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-30 14:58:47,565 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-30 14:58:47,565 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-30 14:58:47,565 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-30 14:58:47,566 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-30 14:58:47,566 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-30 14:58:47,569 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-30 14:58:47,569 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-30 14:58:47,570 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-30 14:58:47,570 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-30 14:58:47,920 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-30 14:58:47,921 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-30 14:58:49,011 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-30 14:58:49,227 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-30 14:58:49,228 - __main__ - INFO - All modules initialized successfully
+2025-08-30 14:58:49,228 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-30 14:58:49,229 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-30 14:58:49,229 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-30 14:58:49,230 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-30 14:58:49,230 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-30 14:58:49,230 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-30 14:58:49,231 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-30 14:58:49,232 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-30 14:58:49,232 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-30 14:58:49,232 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-30 14:58:49,233 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-30 14:58:49,234 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-30 14:58:49,234 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-30 14:58:49,235 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-30 14:58:49,236 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-30 14:58:49,236 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-30 14:58:49,239 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-30 14:58:49,240 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-30 14:58:49,241 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-30 15:04:59,010 - __main__ - INFO - Initializing AI Code Parser
+2025-08-30 15:04:59,011 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-30 15:04:59,012 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-30 15:04:59,013 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-30 15:04:59,013 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-30 15:04:59,013 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-30 15:04:59,013 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-30 15:04:59,014 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-30 15:04:59,014 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-30 15:04:59,015 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-30 15:04:59,015 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-30 15:04:59,015 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-30 15:04:59,180 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-30 15:04:59,180 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-30 15:04:59,269 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-30 15:04:59,380 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-30 15:04:59,381 - __main__ - INFO - All modules initialized successfully
+2025-08-30 15:04:59,381 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-30 15:04:59,381 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-30 15:04:59,381 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-30 15:04:59,382 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-30 15:04:59,382 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-30 15:04:59,382 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-30 15:04:59,383 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-30 15:04:59,383 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-30 15:04:59,383 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-30 15:04:59,384 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-30 15:04:59,384 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-30 15:04:59,385 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-30 15:04:59,385 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-30 15:04:59,385 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-30 15:04:59,386 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-30 15:04:59,386 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-30 15:04:59,389 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-30 15:04:59,389 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-30 15:04:59,390 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-30 15:30:58,612 - __main__ - INFO - Initializing AI Code Parser
+2025-08-30 15:30:58,616 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-30 15:30:58,616 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-30 15:30:58,617 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-30 15:30:58,617 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-30 15:30:58,618 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-30 15:30:58,618 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-30 15:30:58,619 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-30 15:30:58,623 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-30 15:30:58,623 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-30 15:30:58,624 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-30 15:30:58,624 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-30 15:30:58,982 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-30 15:30:58,983 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-30 15:30:59,834 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-30 15:30:59,924 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-30 15:30:59,925 - __main__ - INFO - All modules initialized successfully
+2025-08-30 15:30:59,925 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-30 15:30:59,925 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-30 15:30:59,926 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-30 15:30:59,926 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-30 15:30:59,926 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-30 15:30:59,926 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-30 15:30:59,926 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-30 15:30:59,927 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-30 15:30:59,927 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-30 15:30:59,927 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-30 15:30:59,927 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-30 15:30:59,927 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-30 15:30:59,928 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-30 15:30:59,928 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-30 15:30:59,928 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-30 15:30:59,928 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-30 15:30:59,929 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-30 15:30:59,929 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-30 15:30:59,930 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-08-30 15:38:27,064 - __main__ - INFO - Initializing AI Code Parser
+2025-08-30 15:38:27,064 - modules.module1_debugging.ai_debugger - INFO - Initializing AI Debugger
+2025-08-30 15:38:27,065 - modules.module1_debugging.ai_debugger - INFO - ChatDBG found and available
+2025-08-30 15:38:27,065 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger found and available
+2025-08-30 15:38:27,065 - modules.module1_debugging.ai_debugger - INFO - Setting up AI Debugger integration
+2025-08-30 15:38:27,066 - modules.module1_debugging.ai_debugger - INFO - ChatDBG available: True
+2025-08-30 15:38:27,066 - modules.module1_debugging.ai_debugger - INFO - LLMDebugger available: True
+2025-08-30 15:38:27,066 - modules.module2_nlp.nlp_test_generator - INFO - Initializing NLP Test Generator
+2025-08-30 15:38:27,067 - modules.module2_nlp.nlp_test_generator - INFO - Using CPU for computations
+2025-08-30 15:38:27,067 - modules.module2_nlp.nlp_test_generator - INFO - Setting up NLP models (this may take a few minutes on first run)
+2025-08-30 15:38:27,067 - modules.module2_nlp.nlp_test_generator - INFO - NLP models setup completed (lightweight mode)
+2025-08-30 15:38:27,067 - modules.module3_formal.formal_verifier - INFO - Initializing Formal Verifier
+2025-08-30 15:38:27,202 - modules.module3_formal.formal_verifier - INFO - Frama-C found: 25.0-beta (Manganese)
+2025-08-30 15:38:27,202 - modules.module4_simulink.simulink_generator - INFO - Initializing Simulink Generator
+2025-08-30 15:38:27,291 - modules.module4_simulink.simulink_generator - INFO - Clang found and available
+2025-08-30 15:38:27,408 - modules.module4_simulink.simulink_generator - INFO - MATLAB not available (will use simulation mode)
+2025-08-30 15:38:27,408 - __main__ - INFO - All modules initialized successfully
+2025-08-30 15:38:27,408 - __main__ - INFO - 🎬 Running Phase 1-2 demonstration
+2025-08-30 15:38:27,409 - __main__ - INFO - Testing Module 1: AI Debugging
+2025-08-30 15:38:27,409 - modules.module1_debugging.ai_debugger - INFO - Testing AI Debugger integration
+2025-08-30 15:38:27,409 - modules.module1_debugging.ai_debugger - INFO - Debugging code file: test_file.c
+2025-08-30 15:38:27,410 - modules.module1_debugging.ai_debugger - INFO - Integration test result: {'status': 'Phase 1-2 - Basic integration complete', 'chatdbg_ready': True, 'llmdebugger_ready': True, 'file': 'test_file.c'}
+2025-08-30 15:38:27,410 - __main__ - INFO - Testing Module 2: NLP Test Generation
+2025-08-30 15:38:27,410 - modules.module2_nlp.nlp_test_generator - INFO - Testing NLP basic functionality
+2025-08-30 15:38:27,411 - modules.module2_nlp.nlp_test_generator - INFO - Generating test cases from specification
+2025-08-30 15:38:27,411 - modules.module2_nlp.nlp_test_generator - INFO - NLP test result: Phase 1-2 - Basic NLP setup complete
+2025-08-30 15:38:27,411 - __main__ - INFO - Testing Module 3: Formal Verification
+2025-08-30 15:38:27,412 - modules.module3_formal.formal_verifier - INFO - Testing Frama-C integration
+2025-08-30 15:38:27,412 - modules.module3_formal.formal_verifier - INFO - Generating ACSL contracts for function: test_function
+2025-08-30 15:38:27,412 - modules.module3_formal.formal_verifier - INFO - Frama-C test result: Phase 1-2 - Basic Frama-C integration complete
+2025-08-30 15:38:27,412 - __main__ - INFO - Testing Module 4: Simulink Generation
+2025-08-30 15:38:27,413 - modules.module4_simulink.simulink_generator - INFO - Testing basic C parsing
+2025-08-30 15:38:27,413 - modules.module4_simulink.simulink_generator - INFO - Parsing C function for Simulink conversion
+2025-08-30 15:38:27,415 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
+2025-08-30 15:38:27,415 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
+2025-08-30 15:38:27,415 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!

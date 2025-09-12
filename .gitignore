@@ -1,0 +1,9 @@
+**/models
+**/node_modules
+.env    
+**/ai-code-debugger-extension
+**/venv
+**/__pycache__
+**/*.pyc
+**/.vscode
+**/tools
