@@ -35,7 +35,7 @@ async def quick_test():
         result = await verifier.verify_function_with_contracts(test_code, "add")
         print(f"✅ Test verification: {result.get('status', 'unknown')}")
         
-        print("\n🎉 Module 3  functionality working!")
+        print("\n🎉 Module 3 basic functionality working!")
         
     except Exception as e:
         print(f"❌ Test failed: {e}")

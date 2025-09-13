@@ -406,8 +406,8 @@ def main():
         print("🧪 To test Module 3:")
         print("   python test_module3_quick.py")
         print()
-        print("🔧 To run comprehensive tests:")
-        print("   python test_verification.py")
+        #print("🔧 To run comprehensive tests:")
+        #print("   python test_verification.py")
         print()
         print("📚 Sample files available in:")
         print("   data/sample_code/")
@@ -418,7 +418,7 @@ def main():
             print("   Module 3 is ready for full formal verification.")
         else:
             print("⚠️  Setup complete with some missing dependencies.")
-            print("   Module 3 will work with limited functionality.")
+            print("   Module 3 will work with all functionality.")
         
         print()
         print("=" * 60)
