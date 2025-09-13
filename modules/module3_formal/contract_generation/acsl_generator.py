@@ -1,84 +1,167 @@
 """
-Advanced ACSL Contract Generator using AI and templates
+ACSL Contract Generator - Corrected for AI Code Parser Project
+Fixed imports and paths for your specific project structure
 """
 import logging
 import json
 import re
-from typing import Dict, List, Optional, Tuple
+import os
+import sys
+from typing import Dict, List, Optional
 from pathlib import Path
-import tree_sitter # type: ignore
-from tree_sitter import Language, Node # type: ignore
-import openai # type: ignore
-import anthropic # type: ignore
 
-from config_phase3 import AIConfig, FormalVerificationConfig
+# Add project root to path
+project_root = Path(__file__).parent.parent.parent.parent
+sys.path.insert(0, str(project_root))
+
+# Safe imports with fallbacks
+try:
+    from config_phase3 import AIConfig, FormalVerificationConfig
+except ImportError:
+    # Fallback configuration for when config_phase3 is not available
+    class AIConfig:
+        OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "ollama")
+        ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "ollama")
+        DEFAULT_MODEL = os.getenv("DEFAULT_LLM_MODEL", "llama3")
+        BACKUP_MODEL = os.getenv("BACKUP_LLM_MODEL", "mistral") 
+        MAX_TOKENS = int(os.getenv("MAX_TOKENS", "2048"))
+        TEMPERATURE = float(os.getenv("TEMPERATURE", "0.1"))
+    
+    class FormalVerificationConfig:
+        FRAMAC_TIMEOUT = int(os.getenv("FRAMAC_TIMEOUT", "60"))
+        Z3_TIMEOUT = int(os.getenv("Z3_TIMEOUT", "30"))
+        ACSL_TEMPLATES_DIR = project_root / "templates" / "acsl"
 
 logger = logging.getLogger(__name__)
 
 class ACSLContractGenerator:
-    """Generate ACSL contracts using AI and template matching"""
+    """AI-powered ACSL contract generator with template support"""
     
     def __init__(self):
         logger.info("🚀 Initializing ACSL Contract Generator")
         
-        self.llm_client = self._setup_llm_client()
-        self.templates = self._load_templates()
-        self.parser = self._setup_c_parser()
+        self.templates = self._load_contract_templates()
+        self.llm_available = False
+        self.llm_client = None
+        self.llm_type = None
         
-        logger.info("✅ ACSL Contract Generator initialized")
-    
-    def _setup_llm_client(self):
-        """Setup LLM client for contract generation"""
-        if AIConfig.OPENAI_API_KEY:
-            return openai.OpenAI(api_key=AIConfig.OPENAI_API_KEY)
-        elif AIConfig.ANTHROPIC_API_KEY:
-            return anthropic.Anthropic(api_key=AIConfig.ANTHROPIC_API_KEY)
-        return None
-    
-    def _load_templates(self) -> Dict:
-        """Load ACSL contract templates"""
+        # Try to setup LLM (don't fail if not available)
         try:
-            template_path = Path("templates/acsl/basic/function_templates.json")
-            if template_path.exists():
-                with open(template_path, "r") as f:
-                    return json.load(f)
-            else:
-                logger.warning("Template file not found, using built-in templates")
-                return self._get_builtin_templates()
+            self._setup_llm()
         except Exception as e:
-            logger.error(f"Failed to load templates: {e}")
-            return self._get_builtin_templates()
+            logger.warning(f"LLM setup failed, using templates only: {e}")
+        
+        logger.info(f"✅ ACSL Generator ready (AI: {self.llm_available})")
+    
+    def _load_contract_templates(self) -> Dict:
+        """Load ACSL contract templates"""
+        
+        # Try to load from templates directory
+        template_paths = [
+            FormalVerificationConfig.ACSL_TEMPLATES_DIR / "basic" / "function_templates.json",
+            project_root / "templates" / "acsl" / "basic" / "function_templates.json",
+            project_root / "modules" / "module3_formal" / "templates" / "acsl" / "basic" / "function_templates.json"
+        ]
+        
+        for template_path in template_paths:
+            try:
+                if template_path.exists():
+                    with open(template_path, 'r') as f:
+                        templates = json.load(f)
+                        logger.info(f"✅ Templates loaded from {template_path}")
+                        return templates
+            except Exception as e:
+                logger.warning(f"Failed to load templates from {template_path}: {e}")
+        
+        # Fallback to built-in templates
+        logger.info("📦 Using built-in templates")
+        return self._get_builtin_templates()
     
     def _get_builtin_templates(self) -> Dict:
-        """Get built-in contract templates"""
+        """Built-in contract templates as fallback"""
         return {
-            "default": {
-                "preconditions": ["requires parameters are valid;"],
-                "postconditions": ["ensures \\result is computed correctly;"]
+            "mathematical": {
+                "factorial": {
+                    "preconditions": ["requires n >= 0;", "requires n <= 20;"],
+                    "postconditions": ["ensures \\result >= 1;", "ensures n == 0 ==> \\result == 1;"]
+                },
+                "fibonacci": {
+                    "preconditions": ["requires n >= 0;", "requires n <= 45;"],
+                    "postconditions": ["ensures \\result >= 0;", "ensures n <= 1 ==> \\result == n;"]
+                },
+                "gcd": {
+                    "preconditions": ["requires a >= 0 && b >= 0;", "requires a + b > 0;"],
+                    "postconditions": ["ensures \\result > 0;"]
+                }
+            },
+            "control_systems": {
+                "pid_controller": {
+                    "preconditions": [
+                        "requires \\is_finite(setpoint) && \\is_finite(measurement);",
+                        "requires kp >= 0.0 && ki >= 0.0 && kd >= 0.0;"
+                    ],
+                    "postconditions": ["ensures \\is_finite(\\result);"]
+                }
+            },
+            "general": {
+                "default": {
+                    "preconditions": ["requires parameters are valid;"],
+                    "postconditions": ["ensures \\result is computed correctly;"]
+                }
             }
         }
     
-    def _setup_c_parser(self):
-        """Setup Tree-sitter C parser"""
-        try:
-            # Build language library if not exists
-            lib_path = Path("models/languages.so")
-            if not lib_path.exists():
-                Language.build_library(
-                    str(lib_path),
-                    ['models/tree-sitter-parsers/tree-sitter-c']
+    def _setup_llm(self):
+        """Setup LLM client with safe imports"""
+        
+        # Try OpenAI first
+        if AIConfig.OPENAI_API_KEY and AIConfig.OPENAI_API_KEY != "ollama":
+            try:
+                import openai
+                self.llm_client = openai.OpenAI(
+                    api_key=AIConfig.OPENAI_API_KEY,
+                    base_url=os.getenv("OPENAI_API_BASE", None)
                 )
-            
-            c_language = Language(str(lib_path), 'c')
-            parser = tree_sitter.Parser()
-            parser.set_language(c_language)
-            
-            logger.info("✅ C parser setup complete")
-            return parser
-            
+                self.llm_type = "openai"
+                self.llm_available = True
+                logger.info("✅ OpenAI client initialized")
+                return
+            except ImportError:
+                logger.warning("OpenAI package not installed")
+            except Exception as e:
+                logger.warning(f"OpenAI setup failed: {e}")
+        
+        # Try Anthropic
+        if AIConfig.ANTHROPIC_API_KEY and AIConfig.ANTHROPIC_API_KEY != "ollama":
+            try:
+                # Use the mock anthropic from your project
+                import mocks.mock_anthropic as anthropic
+                self.llm_client = anthropic.Client(api_key=AIConfig.ANTHROPIC_API_KEY)
+                self.llm_type = "anthropic"
+                self.llm_available = True
+                logger.info("✅ Anthropic client initialized (mock)")
+                return
+            except ImportError:
+                logger.warning("Anthropic mock not available")
+            except Exception as e:
+                logger.warning(f"Anthropic setup failed: {e}")
+        
+        # Try local Ollama
+        try:
+            import requests
+            response = requests.get("http://localhost:11434/api/tags", timeout=5)
+            if response.status_code == 200:
+                self.llm_client = "ollama"
+                self.llm_type = "ollama"
+                self.llm_available = True
+                logger.info("✅ Ollama local server detected")
+                return
         except Exception as e:
-            logger.warning(f"C parser setup failed: {e}")
-            return None
+            logger.warning(f"Ollama not available: {e}")
+        
+        # No LLM available
+        self.llm_available = False
+        logger.info("ℹ️  No LLM available, using templates only")
     
     async def generate_contracts_for_function(
         self, 
@@ -88,234 +171,133 @@ class ACSLContractGenerator:
     ) -> Dict:
         """Generate ACSL contracts for a specific function"""
         
-        logger.info(f"🔍 Generating contracts for function: {function_name}")
-        
-        # Parse function
-        function_info = self._parse_function(c_code, function_name)
-        if not function_info:
-            return {"error": f"Function {function_name} not found"}
-        
-        # Determine function domain/category
-        function_category = self._categorize_function(function_name, c_code, specification)
-        
-        # Generate contracts using multiple approaches
-        template_contracts = self._generate_from_templates(function_name, function_category, function_info)
-        ai_contracts = await self._generate_with_ai(function_info, specification)
-        
-        # Combine and refine contracts
-        combined_contracts = self._combine_contracts(template_contracts, ai_contracts, function_info)
-        
-        # Validate contracts
-        validation_result = self._validate_contracts(combined_contracts, function_info)
-        
-        return {
-            "function_name": function_name,
-            "function_info": function_info,
-            "function_category": function_category,
-            "contracts": combined_contracts,
-            "validation": validation_result,
-            "acsl_code": self._format_acsl_contracts(combined_contracts, function_info),
-            "status": "Contract generation complete"
-        }
-    
-    def _parse_function(self, c_code: str, function_name: str) -> Optional[Dict]:
-        """Parse function using Tree-sitter"""
-        
-        if not self.parser:
-            return self._parse_function_regex(c_code, function_name)
+        logger.info(f"🔍 Generating contracts for: {function_name}")
         
         try:
-            tree = self.parser.parse(bytes(c_code, 'utf8'))
+            # Parse function information
+            function_info = self._parse_function_info(c_code, function_name)
+            if not function_info:
+                return {
+                    "error": f"Function '{function_name}' not found in code",
+                    "function_name": function_name,
+                    "contracts": {"preconditions": [], "postconditions": []}
+                }
             
-            def find_function(node: Node, target_name: str) -> Optional[Dict]:
-                if node.type == 'function_definition':
-                    # Extract function details
-                    func_info = self._extract_function_info(node, c_code)
-                    if func_info and func_info.get("name") == target_name:
-                        return func_info
-                
-                for child in node.children:
-                    result = find_function(child, target_name)
-                    if result:
-                        return result
-                return None
+            # Categorize function
+            category = self._categorize_function(function_name, c_code, specification)
             
-            return find_function(tree.root_node, function_name)
+            # Generate contracts using templates
+            template_contracts = self._generate_from_templates(function_name, category, function_info)
+            
+            # Generate contracts using AI if available
+            ai_contracts = {}
+            if self.llm_available:
+                ai_contracts = await self._generate_with_ai(function_info, specification)
+            
+            # Combine contracts
+            combined_contracts = self._combine_contracts(template_contracts, ai_contracts)
+            
+            # Validate contracts
+            validation_result = self._validate_contracts(combined_contracts)
+            
+            return {
+                "function_name": function_name,
+                "contracts": combined_contracts,
+                "validation": validation_result,
+                "acsl_code": self._format_acsl_code(combined_contracts, function_info),
+                "metadata": {
+                    "category": category,
+                    "ai_enhanced": bool(ai_contracts and ai_contracts.get("preconditions")),
+                    "template_used": bool(template_contracts)
+                }
+            }
             
         except Exception as e:
-            logger.error(f"Function parsing failed: {e}")
-            return self._parse_function_regex(c_code, function_name)
+            logger.error(f"Contract generation failed for {function_name}: {e}")
+            return {
+                "error": str(e),
+                "function_name": function_name,
+                "contracts": {"preconditions": [], "postconditions": []}
+            }
     
-    def _extract_function_info(self, node: Node, source: str) -> Dict:
-        """Extract detailed function information from AST node"""
-        
-        info = {
-            "name": "",
-            "return_type": "",
-            "parameters": [],
-            "body": "",
-            "line_start": node.start_point[0] + 1,
-            "line_end": node.end_point[0] + 1
-        }
-        
-        for child in node.children:
-            if child.type in ['primitive_type', 'type_identifier']:
-                info["return_type"] = source[child.start_byte:child.end_byte]
-            
-            elif child.type == 'function_declarator':
-                # Extract function name and parameters
-                for grandchild in child.children:
-                    if grandchild.type == 'identifier':
-                        info["name"] = source[grandchild.start_byte:grandchild.end_byte]
-                    elif grandchild.type == 'parameter_list':
-                        info["parameters"] = self._extract_parameters(grandchild, source)
-            
-            elif child.type == 'compound_statement':
-                info["body"] = source[child.start_byte:child.end_byte]
-        
-        return info
-    
-    def _extract_parameters(self, param_list_node: Node, source: str) -> List[Dict]:
-        """Extract parameter information"""
-        
-        parameters = []
-        for child in param_list_node.children:
-            if child.type == 'parameter_declaration':
-                param_info = {"type": "", "name": ""}
-                
-                for grandchild in child.children:
-                    if grandchild.type in ['primitive_type', 'type_identifier']:
-                        param_info["type"] = source[grandchild.start_byte:grandchild.end_byte]
-                    elif grandchild.type in ['identifier', 'pointer_declarator']:
-                        param_name = source[grandchild.start_byte:grandchild.end_byte]
-                        if '*' in param_name:
-                            param_info["type"] += "*"
-                            param_info["name"] = param_name.replace('*', '').strip()
-                        else:
-                            param_info["name"] = param_name
-                
-                if param_info["type"] and param_info["name"]:
-                    parameters.append(param_info)
-        
-        return parameters
-    
-    def _parse_function_regex(self, c_code: str, function_name: str) -> Optional[Dict]:
-        """Fallback regex-based function parsing"""
+    def _parse_function_info(self, c_code: str, function_name: str) -> Optional[Dict]:
+        """Parse function information from C code using regex"""
         
         # Find function signature
-        pattern = rf'(\w+(?:\s*\*)?)?\s+{re.escape(function_name)}\s*\([^)]*\)\s*\{{'
-        match = re.search(pattern, c_code)
+        pattern = rf'^\s*(\w+(?:\s*\*)?)\s+{re.escape(function_name)}\s*\(([^)]*)\)\s*\{{'
+        match = re.search(pattern, c_code, re.MULTILINE)
         
         if not match:
             return None
         
-        # Extract basic information
-        signature_start = match.start()
-        signature_end = match.end()
-        
-        # Find function body
-        brace_count = 1
-        body_start = signature_end - 1
-        i = signature_end
-        
-        while i < len(c_code) and brace_count > 0:
-            if c_code[i] == '{':
-                brace_count += 1
-            elif c_code[i] == '}':
-                brace_count -= 1
-            i += 1
-        
-        body_end = i
-        
-        # Extract details using regex
-        full_signature = c_code[signature_start:signature_end-1]
-        
-        # Parse return type
-        return_type_match = re.match(r'(\w+(?:\s*\*)?)\s+', full_signature)
-        return_type = return_type_match.group(1) if return_type_match else "unknown"
+        return_type = match.group(1).strip()
+        params_str = match.group(2).strip()
         
         # Parse parameters
-        param_match = re.search(rf'{re.escape(function_name)}\s*\(([^)]*)\)', full_signature)
-        param_str = param_match.group(1) if param_match else ""
-        
         parameters = []
-        if param_str.strip():
-            for param in param_str.split(','):
+        if params_str and params_str != "void":
+            for param in params_str.split(','):
                 param = param.strip()
-                param_parts = param.split()
-                if len(param_parts) >= 2:
-                    param_type = ' '.join(param_parts[:-1])
-                    param_name = param_parts[-1].strip('*')
-                    parameters.append({"type": param_type, "name": param_name})
+                if param:
+                    parts = param.split()
+                    if len(parts) >= 2:
+                        param_type = ' '.join(parts[:-1])
+                        param_name = parts[-1].strip('*')
+                        parameters.append({"type": param_type, "name": param_name})
         
         return {
             "name": function_name,
             "return_type": return_type,
             "parameters": parameters,
-            "body": c_code[body_start:body_end],
-            "signature": full_signature
+            "signature": match.group(0)
         }
     
     def _categorize_function(self, function_name: str, c_code: str, specification: str) -> str:
-        """Categorize function to determine appropriate templates"""
+        """Categorize function for template selection"""
         
-        # Check against known patterns
-        categories = {
-            "mathematical": ["factorial", "fibonacci", "gcd", "prime", "sqrt", "pow"],
-            "control_systems": ["pid", "control", "regulator", "feedback", "setpoint"],
-            "signal_processing": ["filter", "fft", "convolution", "sample", "frequency"],
-            "memory_management": ["malloc", "free", "alloc", "memory", "buffer"],
-            "string_processing": ["strlen", "strcmp", "strcpy", "strcat", "parse"],
-            "file_io": ["fopen", "fread", "fwrite", "fclose", "file"]
-        }
+        name_lower = function_name.lower()
         
-        function_lower = function_name.lower()
-        code_lower = c_code.lower()
-        spec_lower = specification.lower()
+        # Mathematical functions
+        math_keywords = ["factorial", "fibonacci", "gcd", "prime", "sqrt", "pow", "abs"]
+        if any(keyword in name_lower for keyword in math_keywords):
+            return "mathematical"
         
-        for category, keywords in categories.items():
-            if any(keyword in function_lower for keyword in keywords):
-                return category
-            if any(keyword in code_lower for keyword in keywords):
-                return category
-            if any(keyword in spec_lower for keyword in keywords):
-                return category
+        # Control systems
+        control_keywords = ["pid", "control", "feedback", "filter", "regulator"]
+        if any(keyword in name_lower for keyword in control_keywords):
+            return "control_systems"
+        
+        # Signal processing
+        signal_keywords = ["signal", "fft", "filter", "sample", "frequency"]
+        if any(keyword in name_lower for keyword in signal_keywords):
+            return "signal_processing"
+        
+        # Memory management
+        memory_keywords = ["malloc", "free", "alloc", "buffer", "memory"]
+        if any(keyword in name_lower for keyword in memory_keywords):
+            return "memory_management"
         
         return "general"
     
-    def _generate_from_templates(
-        self, 
-        function_name: str, 
-        category: str, 
-        function_info: Dict
-    ) -> Dict:
+    def _generate_from_templates(self, function_name: str, category: str, function_info: Dict) -> Dict:
         """Generate contracts using templates"""
         
         contracts = {"preconditions": [], "postconditions": []}
         
-        # Try category-specific templates
+        # Try specific function template
         if category in self.templates:
             category_templates = self.templates[category]
-            
-            # Look for function-specific template
             if function_name in category_templates:
                 template = category_templates[function_name]
                 contracts["preconditions"].extend(template.get("preconditions", []))
                 contracts["postconditions"].extend(template.get("postconditions", []))
-                return contracts
-            
-            # Use first template from category as fallback
-            if category_templates:
-                first_template = next(iter(category_templates.values()))
-                contracts["preconditions"].extend(first_template.get("preconditions", []))
-                contracts["postconditions"].extend(first_template.get("postconditions", []))
                 return contracts
         
         # Generate basic contracts based on function signature
         return_type = function_info.get("return_type", "")
         parameters = function_info.get("parameters", [])
         
-        # Basic preconditions
+        # Basic parameter preconditions
         for param in parameters:
             param_type = param.get("type", "")
             param_name = param.get("name", "")
@@ -327,7 +309,7 @@ class ACSLContractGenerator:
             elif "*" in param_type:
                 contracts["preconditions"].append(f"requires \\valid({param_name});")
         
-        # Basic postconditions
+        # Basic return value postconditions
         if return_type != "void":
             if "int" in return_type:
                 contracts["postconditions"].append("ensures \\result is valid;")
@@ -336,64 +318,77 @@ class ACSLContractGenerator:
             elif "*" in return_type:
                 contracts["postconditions"].append("ensures \\result == \\null || \\valid(\\result);")
         
+        # Use general default if no specific contracts
+        if not contracts["preconditions"] and not contracts["postconditions"]:
+            default_template = self.templates.get("general", {}).get("default", {})
+            contracts["preconditions"].extend(default_template.get("preconditions", []))
+            contracts["postconditions"].extend(default_template.get("postconditions", []))
+        
         return contracts
     
     async def _generate_with_ai(self, function_info: Dict, specification: str) -> Dict:
-        """Generate contracts using AI"""
+        """Generate contracts using AI/LLM"""
         
-        if not self.llm_client:
-            return {"preconditions": [], "postconditions": []}
+        if not self.llm_available:
+            return {}
         
         try:
-            prompt = self._create_contract_generation_prompt(function_info, specification)
+            prompt = self._create_ai_prompt(function_info, specification)
             
-            if hasattr(self.llm_client, 'chat'):  # OpenAI
+            if self.llm_type == "openai":
                 response = self.llm_client.chat.completions.create(
                     model=AIConfig.DEFAULT_MODEL,
                     messages=[{"role": "user", "content": prompt}],
-                    max_tokens=1000,
-                    temperature=0.1
+                    max_tokens=AIConfig.MAX_TOKENS,
+                    temperature=AIConfig.TEMPERATURE
                 )
                 ai_response = response.choices[0].message.content
-            
-            else:  # Anthropic
-                response = self.llm_client.messages.create(
-                    model="claude-3-sonnet-20240229",
-                    max_tokens=1000,
+                
+            elif self.llm_type == "anthropic":
+                # Use your mock anthropic client
+                response = self.llm_client.messages(
+                    model=AIConfig.DEFAULT_MODEL,
+                    max_tokens=AIConfig.MAX_TOKENS,
+                    temperature=AIConfig.TEMPERATURE,
                     messages=[{"role": "user", "content": prompt}]
                 )
-                ai_response = response.content[0].text
+                ai_response = response.get("content", "")
+                
+            elif self.llm_type == "ollama":
+                import requests
+                response = requests.post("http://localhost:11434/api/generate", json={
+                    "model": AIConfig.DEFAULT_MODEL,
+                    "prompt": prompt,
+                    "stream": False
+                }, timeout=30)
+                
+                if response.status_code == 200:
+                    ai_response = response.json().get("response", "")
+                else:
+                    return {}
             
-            return self._parse_ai_contracts(ai_response)
+            else:
+                return {}
+            
+            return self._parse_ai_response(ai_response)
             
         except Exception as e:
             logger.error(f"AI contract generation failed: {e}")
-            return {"preconditions": [], "postconditions": []}
+            return {}
     
-    def _create_contract_generation_prompt(self, function_info: Dict, specification: str) -> str:
-        """Create prompt for AI contract generation"""
+    def _create_ai_prompt(self, function_info: Dict, specification: str) -> str:
+        """Create AI prompt for contract generation"""
         
         return f"""
-You are an expert in formal verification and ACSL (ANSI/ISO C Specification Language).
-Generate ACSL contracts for the following C function:
+Generate ACSL (ANSI/ISO C Specification Language) contracts for this C function:
 
-**Function Information:**
-- Name: {function_info.get('name', 'unknown')}
-- Return Type: {function_info.get('return_type', 'unknown')}
-- Parameters: {function_info.get('parameters', [])}
-- Specification: {specification}
+Function: {function_info.get('name', 'unknown')}
+Return Type: {function_info.get('return_type', 'unknown')}
+Parameters: {function_info.get('parameters', [])}
+Specification: {specification}
 
-**Function Body:**
-```c
-{function_info.get('body', 'Not available')[:500]}
-```
-
-Generate appropriate ACSL preconditions and postconditions. Consider:
-1. Parameter validation
-2. Return value constraints
-3. Memory safety (if applicable)
-4. Mathematical properties (if applicable)
-5. Error conditions
+Generate appropriate preconditions (requires) and postconditions (ensures).
+Consider parameter validation, return value constraints, and safety conditions.
 
 Respond in JSON format:
 {{
@@ -402,140 +397,107 @@ Respond in JSON format:
 }}
 """
     
-    def _parse_ai_contracts(self, ai_response: str) -> Dict:
-        """Parse AI-generated contracts"""
+    def _parse_ai_response(self, response: str) -> Dict:
+        """Parse AI response to extract contracts"""
         
         try:
-            # Extract JSON from response
-            if "```json" in ai_response:
-                start = ai_response.find("```json") + 7
-                end = ai_response.find("```", start)
-                json_str = ai_response[start:end].strip()
+            # Look for JSON in response
+            if "```json" in response:
+                start = response.find("```json") + 7
+                end = response.find("```", start)
+                json_str = response[start:end].strip()
+            elif "{" in response and "}" in response:
+                start = response.find("{")
+                end = response.rfind("}") + 1
+                json_str = response[start:end]
             else:
-                json_str = ai_response
+                return {}
             
             contracts = json.loads(json_str)
-            
-            # Validate structure
-            if not isinstance(contracts, dict):
-                raise ValueError("Invalid contract structure")
-            
             return {
                 "preconditions": contracts.get("preconditions", []),
                 "postconditions": contracts.get("postconditions", [])
             }
             
         except Exception as e:
-            logger.error(f"AI contract parsing failed: {e}")
-            return {"preconditions": [], "postconditions": []}
+            logger.error(f"AI response parsing failed: {e}")
+            return {}
     
-    def _combine_contracts(
-        self, 
-        template_contracts: Dict, 
-        ai_contracts: Dict, 
-        function_info: Dict
-    ) -> Dict:
-        """Combine and deduplicate contracts from different sources"""
+    def _combine_contracts(self, template_contracts: Dict, ai_contracts: Dict) -> Dict:
+        """Combine template and AI contracts, removing duplicates"""
         
-        combined = {
-            "preconditions": [],
-            "postconditions": []
-        }
+        combined = {"preconditions": [], "postconditions": []}
         
         # Combine preconditions
-        all_preconditions = (
+        all_preconds = (
             template_contracts.get("preconditions", []) +
             ai_contracts.get("preconditions", [])
         )
         
-        # Deduplicate and refine
-        seen_preconditions = set()
-        for precond in all_preconditions:
-            normalized = self._normalize_contract(precond)
-            if normalized not in seen_preconditions:
+        seen_preconds = set()
+        for precond in all_preconds:
+            normalized = precond.strip().lower()
+            if normalized not in seen_preconds:
                 combined["preconditions"].append(precond)
-                seen_preconditions.add(normalized)
+                seen_preconds.add(normalized)
         
         # Combine postconditions
-        all_postconditions = (
+        all_postconds = (
             template_contracts.get("postconditions", []) +
             ai_contracts.get("postconditions", [])
         )
         
-        seen_postconditions = set()
-        for postcond in all_postconditions:
-            normalized = self._normalize_contract(postcond)
-            if normalized not in seen_postconditions:
+        seen_postconds = set()
+        for postcond in all_postconds:
+            normalized = postcond.strip().lower()
+            if normalized not in seen_postconds:
                 combined["postconditions"].append(postcond)
-                seen_postconditions.add(normalized)
+                seen_postconds.add(normalized)
         
         return combined
     
-    def _normalize_contract(self, contract: str) -> str:
-        """Normalize contract for deduplication"""
-        # Remove extra whitespace and normalize format
-        return re.sub(r'\s+', ' ', contract.strip().lower())
-    
-    def _validate_contracts(self, contracts: Dict, function_info: Dict) -> Dict:
-        """Validate generated contracts"""
+    def _validate_contracts(self, contracts: Dict) -> Dict:
+        """Validate contract syntax"""
         
-        validation = {
-            "valid": True,
-            "warnings": [],
-            "errors": []
-        }
+        validation = {"valid": True, "warnings": [], "errors": []}
         
         # Check preconditions
         for precond in contracts.get("preconditions", []):
             if not precond.strip().startswith("requires"):
-                validation["errors"].append(f"Invalid precondition format: {precond}")
+                validation["errors"].append(f"Invalid precondition: {precond}")
                 validation["valid"] = False
-            
             if not precond.strip().endswith(";"):
                 validation["warnings"].append(f"Missing semicolon: {precond}")
         
         # Check postconditions
         for postcond in contracts.get("postconditions", []):
             if not postcond.strip().startswith("ensures"):
-                validation["errors"].append(f"Invalid postcondition format: {postcond}")
+                validation["errors"].append(f"Invalid postcondition: {postcond}")
                 validation["valid"] = False
-            
             if not postcond.strip().endswith(";"):
                 validation["warnings"].append(f"Missing semicolon: {postcond}")
         
         return validation
     
-    def _format_acsl_contracts(self, contracts: Dict, function_info: Dict) -> str:
-        """Format contracts as ACSL code"""
+    def _format_acsl_code(self, contracts: Dict, function_info: Dict) -> str:
+        """Format contracts as ACSL annotation"""
         
-        acsl_code = "/*@\n"
+        lines = ["/*@"]
         
         # Add preconditions
         for precond in contracts.get("preconditions", []):
-            acsl_code += f"  @ {precond}\n"
+            lines.append(f"  @ {precond}")
         
         # Add postconditions
         for postcond in contracts.get("postconditions", []):
-            acsl_code += f"  @ {postcond}\n"
+            lines.append(f"  @ {postcond}")
         
-        acsl_code += "  @*/\n"
+        lines.append("  @*/")
         
-        # Add function signature
-        return_type = function_info.get("return_type", "unknown")
-        name = function_info.get("name", "unknown")
-        params = function_info.get("parameters", [])
-        
-        param_strs = []
-        for param in params:
-            param_str = f"{param.get('type', 'unknown')} {param.get('name', 'param')}"
-            param_strs.append(param_str)
-        
-        function_signature = f"{return_type} {name}({', '.join(param_strs)});"
-        acsl_code += function_signature
-        
-        return acsl_code
+        return "\n".join(lines)
 
-# Test the contract generator
+
+# Test the generator
 async def test_acsl_generator():
     """Test the ACSL contract generator"""
     
@@ -550,13 +512,27 @@ int factorial(int n) {
 """
     
     result = await generator.generate_contracts_for_function(
-        test_code, 
-        "factorial",
-        "Calculate factorial of non-negative integers"
+        test_code, "factorial", "Calculate factorial of non-negative integers"
     )
     
-    print("Generated ACSL contracts:")
-    print(result.get("acsl_code", "No contracts generated"))
+    print("🧪 ACSL Generator Test Results:")
+    print("=" * 40)
+    print(f"Function: {result.get('function_name', 'unknown')}")
+    print(f"Category: {result.get('metadata', {}).get('category', 'unknown')}")
+    print(f"AI Enhanced: {result.get('metadata', {}).get('ai_enhanced', False)}")
+    print(f"Template Used: {result.get('metadata', {}).get('template_used', False)}")
+    
+    contracts = result.get("contracts", {})
+    print(f"\nPreconditions ({len(contracts.get('preconditions', []))}): ")
+    for precond in contracts.get("preconditions", []):
+        print(f"  - {precond}")
+    
+    print(f"\nPostconditions ({len(contracts.get('postconditions', []))}): ")
+    for postcond in contracts.get("postconditions", []):
+        print(f"  - {postcond}")
+    
+    print(f"\nGenerated ACSL:")
+    print(result.get("acsl_code", "No ACSL generated"))
     
     return result
 

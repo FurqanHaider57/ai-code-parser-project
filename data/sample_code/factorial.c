@@ -17,6 +17,7 @@ int fibonacci(int n) {
     if (n <= 1) return n;
     return fibonacci(n-1) + fibonacci(n-2);
 }
+
 /*@ requires a >= 0 && b >= 0;
   @ ensures \result == a + b;
   @*/
@@ -24,20 +25,6 @@ int add(int a, int b) {
     return a + b;
 }
 
-/*@ requires n >= 0;
-  @ ensures \result >= 0;
-  @ ensures \result * \result <= n;
-  @ ensures ( \result+1 ) * ( \result+1 ) > n;
-  @*/
-int integer_sqrt(int n) {
-    int res = 0;
-    while ((res+1)*(res+1) <= n) {
-        res++;
-    }
-    return res;
-}
-
-/*
 int main() {
     int fact_result = factorial(5);
     int fib_result = fibonacci(8);
@@ -47,4 +34,3 @@ int main() {
     
     return 0;
 }
-*/

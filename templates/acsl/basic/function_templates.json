@@ -1,5 +1,5 @@
 {
-  "mathematical_functions": {
+  "mathematical": {
     "factorial": {
       "preconditions": [
         "requires n >= 0;",
@@ -8,11 +8,42 @@
       "postconditions": [
         "ensures \\result >= 1;",
         "ensures n == 0 ==> \\result == 1;"
-      ]
+      ],
+      "description": "Factorial function with overflow protection"
+    },
+    "fibonacci": {
+      "preconditions": [
+        "requires n >= 0;",
+        "requires n <= 45;"
+      ],
+      "postconditions": [
+        "ensures \\result >= 0;",
+        "ensures n <= 1 ==> \\result == n;"
+      ],
+      "description": "Fibonacci sequence with bounds checking"
     }
   },
-  "default": {
-    "preconditions": ["requires parameters are valid;"],
-    "postconditions": ["ensures \\result is computed correctly;"]
+  "control_systems": {
+    "pid_controller": {
+      "preconditions": [
+        "requires \\is_finite(setpoint) && \\is_finite(measurement);",
+        "requires kp >= 0.0 && ki >= 0.0 && kd >= 0.0;"
+      ],
+      "postconditions": [
+        "ensures \\is_finite(\\result);"
+      ],
+      "description": "PID controller with saturation limits"
+    }
+  },
+  "general": {
+    "default": {
+      "preconditions": [
+        "requires parameters are valid;"
+      ],
+      "postconditions": [
+        "ensures \\result is computed correctly;"
+      ],
+      "description": "Generic function contracts"
+    }
   }
 }

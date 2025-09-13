@@ -1,8 +1,9 @@
+
 #include <stdio.h>
 #include <math.h>
 
 /*@ requires kp >= 0.0 && ki >= 0.0 && kd >= 0.0;
-  @ ensures \result is finite;
+  @ ensures \is_finite(\result);
   @*/
 float pid_controller(float setpoint, float measurement, float kp, float ki, float kd) {
     static float integral = 0.0;
@@ -20,12 +21,11 @@ float pid_controller(float setpoint, float measurement, float kp, float ki, floa
 
 /*@ requires frequency > 0.0;
   @ ensures \result >= -1.0 && \result <= 1.0;
-  @*/  // <- Fixed: Added missing closing */
+  @*/
 float signal_generator(float frequency, float time) {
     return sin(2 * 3.14159 * frequency * time);
 }
 
-/*
 int main() {
     float control_output = pid_controller(100.0, 95.0, 0.1, 0.01, 0.05);
     float signal = signal_generator(1.0, 5.0);
@@ -35,4 +35,3 @@ int main() {
     
     return 0;
 }
-*/
