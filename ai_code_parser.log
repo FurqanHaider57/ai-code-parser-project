@@ -1122,3 +1122,19 @@
 2025-08-30 15:38:27,415 - modules.module4_simulink.simulink_generator - INFO - Generating Simulink model template
 2025-08-30 15:38:27,415 - modules.module4_simulink.simulink_generator - INFO - Simulink generator test result: Phase 1-2 - Basic parsing and template generation complete
 2025-08-30 15:38:27,415 - __main__ - INFO - 🎉 Phase 1-2 demonstration completed successfully!
+2025-12-03 01:25:02,630 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 2
+2025-12-03 01:25:02,632 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 4
+2025-12-03 01:25:02,632 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 8
+2025-12-03 01:25:02,632 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 9
+2025-12-03 01:25:02,633 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 13
+2025-12-03 01:25:02,633 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 14
+2025-12-03 01:25:02,633 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 15
+2025-12-03 01:25:02,634 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 16
+2025-12-03 01:25:02,634 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 17
+2025-12-03 01:25:02,634 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 19
+2025-12-03 01:25:02,634 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 20
+2025-12-03 01:25:02,635 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 21
+2025-12-03 01:25:02,635 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 22
+2025-12-03 01:25:02,693 - __main__ - INFO - Initializing AI Code Parser
+2025-12-03 01:25:11,456 - huggingface_hub.file_download - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-12-03 01:25:26,743 - __main__ - INFO - Application interrupted by user

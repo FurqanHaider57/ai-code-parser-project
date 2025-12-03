@@ -1,12 +1,12 @@
 # Module 3 Formal Verification - Detailed Test Report
 
-**Generated:** 2025-09-13 21:53:26
+**Generated:** 2025-09-16 04:13:54
 
 
 ============================================================
 📊 COMPREHENSIVE TEST SUMMARY
 ============================================================
-⏱️  Total Test Time: 18071.67 seconds
+⏱️  Total Test Time: 5.78 seconds
 🧪 Total Tests: 12
 ✅ Passed: 12
 ❌ Failed: 0
@@ -15,8 +15,8 @@
 
 📋 Contract Generator:
    ✅ PASS
-   📝 Contracts Generated: 7
-   🔍 AI Enhanced: True
+   📝 Contracts Generated: 4
+   🔍 AI Enhanced: False
 
 📋 Single Function Verification:
    ✅ factorial: PASS
@@ -43,8 +43,8 @@
 
 📋 Performance:
    ✅ PASS
-   ⚡ Duration: 4445.47s
-   🚀 Functions/sec: 0.00
+   ⚡ Duration: 1.65s
+   🚀 Functions/sec: 3.02
 
 🔧 COMPONENT STATUS:
    📝 Contract Generator: ✅ Ready
@@ -65,14 +65,11 @@
   "contracts": {
     "preconditions": [
       "requires n >= 0;",
-      "requires n <= 20;",
-      "requires is_int(n);"
+      "requires n <= 20;"
     ],
     "postconditions": [
       "ensures \\result >= 1;",
-      "ensures n == 0 ==> \\result == 1;",
-      "ensures \result == (n == 0 ? 1 : n * factorial(n-1));",
-      "ensures 0 <= \result;"
+      "ensures n == 0 ==> \\result == 1;"
     ]
   },
   "validation": {
@@ -80,10 +77,10 @@
     "warnings": [],
     "errors": []
   },
-  "acsl_code": "/*@\n  @ requires n >= 0;\n  @ requires n <= 20;\n  @ requires is_int(n);\n  @ ensures \\result >= 1;\n  @ ensures n == 0 ==> \\result == 1;\n  @ ensures \result == (n == 0 ? 1 : n * factorial(n-1));\n  @ ensures 0 <= \result;\n  @*/",
+  "acsl_code": "/*@\n  @ requires n >= 0;\n  @ requires n <= 20;\n  @ ensures \\result >= 1;\n  @ ensures n == 0 ==> \\result == 1;\n  @*/",
   "metadata": {
     "category": "mathematical",
-    "ai_enhanced": true,
+    "ai_enhanced": false,
     "template_used": true
   }
 }
@@ -105,32 +102,26 @@
         "contracts": {
           "preconditions": [
             "requires n >= 0;",
-            "requires n <= 20;",
-            "requires !is_int_zero(n);"
+            "requires n <= 20;"
           ],
           "postconditions": [
             "ensures \\result >= 1;",
-            "ensures n == 0 ==> \\result == 1;",
-            "ensures result == (n * factorial!(n-1));",
-            "ensures is_int(result);",
-            "ensures !is_error(result)"
+            "ensures n == 0 ==> \\result == 1;"
           ]
         },
         "validation": {
           "valid": true,
-          "warnings": [
-            "Missing semicolon: ensures !is_error(result)"
-          ],
+          "warnings": [],
           "errors": []
         },
-        "acsl_code": "/*@\n  @ requires n >= 0;\n  @ requires n <= 20;\n  @ requires !is_int_zero(n);\n  @ ensures \\result >= 1;\n  @ ensures n == 0 ==> \\result == 1;\n  @ ensures result == (n * factorial!(n-1));\n  @ ensures is_int(result);\n  @ ensures !is_error(result)\n  @*/",
+        "acsl_code": "/*@\n  @ requires n >= 0;\n  @ requires n <= 20;\n  @ ensures \\result >= 1;\n  @ ensures n == 0 ==> \\result == 1;\n  @*/",
         "metadata": {
           "category": "mathematical",
-          "ai_enhanced": true,
+          "ai_enhanced": false,
           "template_used": true
         }
       },
-      "annotated_code": "/*@\n  @ requires n >= 0;\n  @ requires n <= 20;\n  @ requires !is_int_zero(n);\n  @ ensures \\result >= 1;\n  @ ensures n == 0 ==> \\result == 1;\n  @ ensures result == (n * factorial!(n-1));\n  @ ensures is_int(result);\n  @ ensures !is_error(result)\n  @*/\nint factorial(int n) { if (n <= 1) return 1; return n * factorial(n-1); }",
+      "annotated_code": "/*@\n  @ requires n >= 0;\n  @ requires n <= 20;\n  @ ensures \\result >= 1;\n  @ ensures n == 0 ==> \\result == 1;\n  @*/\nint factorial(int n) { if (n <= 1) return 1; return n * factorial(n-1); }",
       "verification_result": {
         "success": false,
         "return_code": 1,
@@ -172,15 +163,10 @@
         "contracts": {
           "preconditions": [
             "requires a is valid;",
-            "requires b is valid;",
-            "requires a >= 0 && b >= 0;",
-            "requires is_integer(a) && is_integer(b);"
+            "requires b is valid;"
           ],
           "postconditions": [
-            "ensures \\result is valid;",
-            "ensures \result >= 1;",
-            "ensures \result == gcd(a, b) || (a == 0 && b == 0 && \result == 0);",
-            "ensures a % \result == 0 && b % \result == 0;"
+            "ensures \\result is valid;"
           ]
         },
         "validation": {
@@ -188,14 +174,14 @@
           "warnings": [],
           "errors": []
         },
-        "acsl_code": "/*@\n  @ requires a is valid;\n  @ requires b is valid;\n  @ requires a >= 0 && b >= 0;\n  @ requires is_integer(a) && is_integer(b);\n  @ ensures \\result is valid;\n  @ ensures \result >= 1;\n  @ ensures \result == gcd(a, b) || (a == 0 && b == 0 && \result == 0);\n  @ ensures a % \result == 0 && b % \result == 0;\n  @*/",
+        "acsl_code": "/*@\n  @ requires a is valid;\n  @ requires b is valid;\n  @ ensures \\result is valid;\n  @*/",
         "metadata": {
           "category": "mathematical",
-          "ai_enhanced": true,
+          "ai_enhanced": false,
           "template_used": true
         }
       },
-      "annotated_code": "/*@\n  @ requires a is valid;\n  @ requires b is valid;\n  @ requires a >= 0 && b >= 0;\n  @ requires is_integer(a) && is_integer(b);\n  @ ensures \\result is valid;\n  @ ensures \result >= 1;\n  @ ensures \result == gcd(a, b) || (a == 0 && b == 0 && \result == 0);\n  @ ensures a % \result == 0 && b % \result == 0;\n  @*/\nint gcd(int a, int b) { if (b == 0) return a; return gcd(b, a % b); }",
+      "annotated_code": "/*@\n  @ requires a is valid;\n  @ requires b is valid;\n  @ ensures \\result is valid;\n  @*/\nint gcd(int a, int b) { if (b == 0) return a; return gcd(b, a % b); }",
       "verification_result": {
         "success": false,
         "return_code": 1,
@@ -237,31 +223,25 @@
         "contracts": {
           "preconditions": [
             "requires a is valid;",
-            "requires b is valid;",
-            "requires a >= 0 && b >= 0;",
-            "requires !is_inf(a) && !is_inf(b);"
+            "requires b is valid;"
           ],
           "postconditions": [
-            "ensures \\result is valid;",
-            "ensures \result == a + b;",
-            "ensures !is_nan(\result)"
+            "ensures \\result is valid;"
           ]
         },
         "validation": {
           "valid": true,
-          "warnings": [
-            "Missing semicolon: ensures !is_nan(\result)"
-          ],
+          "warnings": [],
           "errors": []
         },
-        "acsl_code": "/*@\n  @ requires a is valid;\n  @ requires b is valid;\n  @ requires a >= 0 && b >= 0;\n  @ requires !is_inf(a) && !is_inf(b);\n  @ ensures \\result is valid;\n  @ ensures \result == a + b;\n  @ ensures !is_nan(\result)\n  @*/",
+        "acsl_code": "/*@\n  @ requires a is valid;\n  @ requires b is valid;\n  @ ensures \\result is valid;\n  @*/",
         "metadata": {
           "category": "general",
-          "ai_enhanced": true,
+          "ai_enhanced": false,
           "template_used": true
         }
       },
-      "annotated_code": "/*@\n  @ requires a is valid;\n  @ requires b is valid;\n  @ requires a >= 0 && b >= 0;\n  @ requires !is_inf(a) && !is_inf(b);\n  @ ensures \\result is valid;\n  @ ensures \result == a + b;\n  @ ensures !is_nan(\result)\n  @*/\nint add(int a, int b) { return a + b; }",
+      "annotated_code": "/*@\n  @ requires a is valid;\n  @ requires b is valid;\n  @ ensures \\result is valid;\n  @*/\nint add(int a, int b) { return a + b; }",
       "verification_result": {
         "success": false,
         "return_code": 1,
@@ -309,35 +289,26 @@
         "contracts": {
           "preconditions": [
             "requires n >= 0;",
-            "requires n <= 20;",
-            "requires is_integer(n);",
-            "requires !is_negative_integer(n)"
+            "requires n <= 20;"
           ],
           "postconditions": [
             "ensures \\result >= 1;",
-            "ensures n == 0 ==> \\result == 1;",
-            "ensures result == (n == 0 ? 1 : n * factorial(n-1));",
-            "ensures !integer_overflow(result)",
-            "ensures !memory_leak()"
+            "ensures n == 0 ==> \\result == 1;"
           ]
         },
         "validation": {
           "valid": true,
-          "warnings": [
-            "Missing semicolon: requires !is_negative_integer(n)",
-            "Missing semicolon: ensures !integer_overflow(result)",
-            "Missing semicolon: ensures !memory_leak()"
-          ],
+          "warnings": [],
           "errors": []
         },
-        "acsl_code": "/*@\n  @ requires n >= 0;\n  @ requires n <= 20;\n  @ requires is_integer(n);\n  @ requires !is_negative_integer(n)\n  @ ensures \\result >= 1;\n  @ ensures n == 0 ==> \\result == 1;\n  @ ensures result == (n == 0 ? 1 : n * factorial(n-1));\n  @ ensures !integer_overflow(result)\n  @ ensures !memory_leak()\n  @*/",
+        "acsl_code": "/*@\n  @ requires n >= 0;\n  @ requires n <= 20;\n  @ ensures \\result >= 1;\n  @ ensures n == 0 ==> \\result == 1;\n  @*/",
         "metadata": {
           "category": "mathematical",
-          "ai_enhanced": true,
+          "ai_enhanced": false,
           "template_used": true
         }
       },
-      "annotated_code": "\n#include <stdio.h>\n#include <math.h>\n\n/*@\n  @ requires n >= 0;\n  @ requires n <= 20;\n  @ requires is_integer(n);\n  @ requires !is_negative_integer(n)\n  @ ensures \\result >= 1;\n  @ ensures n == 0 ==> \\result == 1;\n  @ ensures result == (n == 0 ? 1 : n * factorial(n-1));\n  @ ensures !integer_overflow(result)\n  @ ensures !memory_leak()\n  @*/\nint factorial(int n) {\n    if (n < 0) return -1;\n    if (n <= 1) return 1;\n    return n * factorial(n - 1);\n}\n\nint fibonacci(int n) {\n    if (n <= 1) return n;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint gcd(int a, int b) {\n    while (b != 0) {\n        int temp = b;\n        b = a % b;\n        a = temp;\n    }\n    return a;\n}\n\nfloat pid_controller(float setpoint, float measurement, float kp, float ki, float kd) {\n    static float integral = 0.0;\n    static float previous_error = 0.0;\n    \n    float error = setpoint - measurement;\n    integral += error;\n    float derivative = error - previous_error;\n    \n    float output = kp * error + ki * integral + kd * derivative;\n    previous_error = error;\n    \n    return output;\n}\n",
+      "annotated_code": "\n#include <stdio.h>\n#include <math.h>\n\n/*@\n  @ requires n >= 0;\n  @ requires n <= 20;\n  @ ensures \\result >= 1;\n  @ ensures n == 0 ==> \\result == 1;\n  @*/\nint factorial(int n) {\n    if (n < 0) return -1;\n    if (n <= 1) return 1;\n    return n * factorial(n - 1);\n}\n\nint fibonacci(int n) {\n    if (n <= 1) return n;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint gcd(int a, int b) {\n    while (b != 0) {\n        int temp = b;\n        b = a % b;\n        a = temp;\n    }\n    return a;\n}\n\nfloat pid_controller(float setpoint, float measurement, float kp, float ki, float kd) {\n    static float integral = 0.0;\n    static float previous_error = 0.0;\n    \n    float error = setpoint - measurement;\n    integral += error;\n    float derivative = error - previous_error;\n    \n    float output = kp * error + ki * integral + kd * derivative;\n    previous_error = error;\n    \n    return output;\n}\n",
       "verification_result": {
         "success": false,
         "return_code": 1,
@@ -374,14 +345,11 @@
         "contracts": {
           "preconditions": [
             "requires n >= 0;",
-            "requires n <= 45;",
-            "requires is_integer(n);"
+            "requires n <= 45;"
           ],
           "postconditions": [
             "ensures \\result >= 0;",
-            "ensures n <= 1 ==> \\result == n;",
-            "ensures \result == 0 || (\result > 0 && exists k :: (k >= 0 && k < n) && (fibonacci(k) * fibonacci(n - k - 1) == \result));",
-            "ensures is_integer(\result);"
+            "ensures n <= 1 ==> \\result == n;"
           ]
         },
         "validation": {
@@ -389,14 +357,14 @@
           "warnings": [],
           "errors": []
         },
-        "acsl_code": "/*@\n  @ requires n >= 0;\n  @ requires n <= 45;\n  @ requires is_integer(n);\n  @ ensures \\result >= 0;\n  @ ensures n <= 1 ==> \\result == n;\n  @ ensures \result == 0 || (\result > 0 && exists k :: (k >= 0 && k < n) && (fibonacci(k) * fibonacci(n - k - 1) == \result));\n  @ ensures is_integer(\result);\n  @*/",
+        "acsl_code": "/*@\n  @ requires n >= 0;\n  @ requires n <= 45;\n  @ ensures \\result >= 0;\n  @ ensures n <= 1 ==> \\result == n;\n  @*/",
         "metadata": {
           "category": "mathematical",
-          "ai_enhanced": true,
+          "ai_enhanced": false,
           "template_used": true
         }
       },
-      "annotated_code": "\n#include <stdio.h>\n#include <math.h>\n\nint factorial(int n) {\n    if (n < 0) return -1;\n    if (n <= 1) return 1;\n    return n * factorial(n - 1);\n}\n\n/*@\n  @ requires n >= 0;\n  @ requires n <= 45;\n  @ requires is_integer(n);\n  @ ensures \\result >= 0;\n  @ ensures n <= 1 ==> \\result == n;\n  @ ensures \result == 0 || (\result > 0 && exists k :: (k >= 0 && k < n) && (fibonacci(k) * fibonacci(n - k - 1) == \result));\n  @ ensures is_integer(\result);\n  @*/\nint fibonacci(int n) {\n    if (n <= 1) return n;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint gcd(int a, int b) {\n    while (b != 0) {\n        int temp = b;\n        b = a % b;\n        a = temp;\n    }\n    return a;\n}\n\nfloat pid_controller(float setpoint, float measurement, float kp, float ki, float kd) {\n    static float integral = 0.0;\n    static float previous_error = 0.0;\n    \n    float error = setpoint - measurement;\n    integral += error;\n    float derivative = error - previous_error;\n    \n    float output = kp * error + ki * integral + kd * derivative;\n    previous_error = error;\n    \n    return output;\n}\n",
+      "annotated_code": "\n#include <stdio.h>\n#include <math.h>\n\nint factorial(int n) {\n    if (n < 0) return -1;\n    if (n <= 1) return 1;\n    return n * factorial(n - 1);\n}\n\n/*@\n  @ requires n >= 0;\n  @ requires n <= 45;\n  @ ensures \\result >= 0;\n  @ ensures n <= 1 ==> \\result == n;\n  @*/\nint fibonacci(int n) {\n    if (n <= 1) return n;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint gcd(int a, int b) {\n    while (b != 0) {\n        int temp = b;\n        b = a % b;\n        a = temp;\n    }\n    return a;\n}\n\nfloat pid_controller(float setpoint, float measurement, float kp, float ki, float kd) {\n    static float integral = 0.0;\n    static float previous_error = 0.0;\n    \n    float error = setpoint - measurement;\n    integral += error;\n    float derivative = error - previous_error;\n    \n    float output = kp * error + ki * integral + kd * derivative;\n    previous_error = error;\n    \n    return output;\n}\n",
       "verification_result": {
         "success": false,
         "return_code": 1,
@@ -488,39 +456,25 @@
         "contracts": {
           "preconditions": [
             "requires \\is_finite(setpoint) && \\is_finite(measurement);",
-            "requires kp >= 0.0 && ki >= 0.0 && kd >= 0.0;",
-            "requires setpoint >= 0 && measurement >= 0;",
-            "requires kp > 0 && ki > 0 && kd >= 0;",
-            "requires (measurement < setpoint) || (measurement == setpoint);"
+            "requires kp >= 0.0 && ki >= 0.0 && kd >= 0.0;"
           ],
           "postconditions": [
-            "ensures \\is_finite(\\result);",
-            "ensures result >= 0;",
-            "ensures (-1e6 <= result) && (result <= 1e6);",
-            "ensures (abs(result) <= kp * abs(setpoint - measurement)) &&",
-            "      ((ki * (setpoint - measurement) + kd * (measurement - last_measurement)) <= abs(result));",
-            "assigns @free; // no memory allocation or modification"
+            "ensures \\is_finite(\\result);"
           ]
         },
         "validation": {
-          "valid": false,
-          "warnings": [
-            "Missing semicolon: ensures (abs(result) <= kp * abs(setpoint - measurement)) &&",
-            "Missing semicolon: assigns @free; // no memory allocation or modification"
-          ],
-          "errors": [
-            "Invalid postcondition format:       ((ki * (setpoint - measurement) + kd * (measurement - last_measurement)) <= abs(result));",
-            "Invalid postcondition format: assigns @free; // no memory allocation or modification"
-          ]
+          "valid": true,
+          "warnings": [],
+          "errors": []
         },
-        "acsl_code": "/*@\n  @ requires \\is_finite(setpoint) && \\is_finite(measurement);\n  @ requires kp >= 0.0 && ki >= 0.0 && kd >= 0.0;\n  @ requires setpoint >= 0 && measurement >= 0;\n  @ requires kp > 0 && ki > 0 && kd >= 0;\n  @ requires (measurement < setpoint) || (measurement == setpoint);\n  @ ensures \\is_finite(\\result);\n  @ ensures result >= 0;\n  @ ensures (-1e6 <= result) && (result <= 1e6);\n  @ ensures (abs(result) <= kp * abs(setpoint - measurement)) &&\n  @       ((ki * (setpoint - measurement) + kd * (measurement - last_measurement)) <= abs(result));\n  @ assigns @free; // no memory allocation or modification\n  @*/",
+        "acsl_code": "/*@\n  @ requires \\is_finite(setpoint) && \\is_finite(measurement);\n  @ requires kp >= 0.0 && ki >= 0.0 && kd >= 0.0;\n  @ ensures \\is_finite(\\result);\n  @*/",
         "metadata": {
           "category": "control_systems",
-          "ai_enhanced": true,
+          "ai_enhanced": false,
           "template_used": true
         }
       },
-      "annotated_code": "\n#include <stdio.h>\n#include <math.h>\n\nint factorial(int n) {\n    if (n < 0) return -1;\n    if (n <= 1) return 1;\n    return n * factorial(n - 1);\n}\n\nint fibonacci(int n) {\n    if (n <= 1) return n;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint gcd(int a, int b) {\n    while (b != 0) {\n        int temp = b;\n        b = a % b;\n        a = temp;\n    }\n    return a;\n}\n\n/*@\n  @ requires \\is_finite(setpoint) && \\is_finite(measurement);\n  @ requires kp >= 0.0 && ki >= 0.0 && kd >= 0.0;\n  @ requires setpoint >= 0 && measurement >= 0;\n  @ requires kp > 0 && ki > 0 && kd >= 0;\n  @ requires (measurement < setpoint) || (measurement == setpoint);\n  @ ensures \\is_finite(\\result);\n  @ ensures result >= 0;\n  @ ensures (-1e6 <= result) && (result <= 1e6);\n  @ ensures (abs(result) <= kp * abs(setpoint - measurement)) &&\n  @       ((ki * (setpoint - measurement) + kd * (measurement - last_measurement)) <= abs(result));\n  @ assigns @free; // no memory allocation or modification\n  @*/\nfloat pid_controller(float setpoint, float measurement, float kp, float ki, float kd) {\n    static float integral = 0.0;\n    static float previous_error = 0.0;\n    \n    float error = setpoint - measurement;\n    integral += error;\n    float derivative = error - previous_error;\n    \n    float output = kp * error + ki * integral + kd * derivative;\n    previous_error = error;\n    \n    return output;\n}\n",
+      "annotated_code": "\n#include <stdio.h>\n#include <math.h>\n\nint factorial(int n) {\n    if (n < 0) return -1;\n    if (n <= 1) return 1;\n    return n * factorial(n - 1);\n}\n\nint fibonacci(int n) {\n    if (n <= 1) return n;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint gcd(int a, int b) {\n    while (b != 0) {\n        int temp = b;\n        b = a % b;\n        a = temp;\n    }\n    return a;\n}\n\n/*@\n  @ requires \\is_finite(setpoint) && \\is_finite(measurement);\n  @ requires kp >= 0.0 && ki >= 0.0 && kd >= 0.0;\n  @ ensures \\is_finite(\\result);\n  @*/\nfloat pid_controller(float setpoint, float measurement, float kp, float ki, float kd) {\n    static float integral = 0.0;\n    static float previous_error = 0.0;\n    \n    float error = setpoint - measurement;\n    integral += error;\n    float derivative = error - previous_error;\n    \n    float output = kp * error + ki * integral + kd * derivative;\n    previous_error = error;\n    \n    return output;\n}\n",
       "verification_result": {
         "success": false,
         "return_code": 1,
@@ -535,15 +489,12 @@
       },
       "analysis": {
         "verification_successful": false,
-        "contracts_valid": false,
+        "contracts_valid": true,
         "issues_found": [
-          "Verification failed",
-          "Invalid postcondition format:       ((ki * (setpoint - measurement) + kd * (measurement - last_measurement)) <= abs(result));",
-          "Invalid postcondition format: assigns @free; // no memory allocation or modification"
+          "Verification failed"
         ],
         "recommendations": [
-          "Review and strengthen contracts",
-          "Fix contract syntax errors"
+          "Review and strengthen contracts"
         ],
         "statistics": {
           "total": 0,
@@ -558,7 +509,7 @@
     "successful_verifications": 4,
     "failed_verifications": 0,
     "success_rate": 1.0,
-    "total_contracts_generated": 30,
+    "total_contracts_generated": 14,
     "overall_status": "completed"
   }
 }
@@ -633,15 +584,10 @@
         "function_name": "string_length",
         "contracts": {
           "preconditions": [
-            "requires \\valid(str);",
-            "requires valid_pointer(str);",
-            "requires is_non_null(str);"
+            "requires \\valid(str);"
           ],
           "postconditions": [
-            "ensures \\result is valid;",
-            "ensures \result >= 0;",
-            "ensures \result <= strlen(str);",
-            "ensures is_valid_index(\result, str);"
+            "ensures \\result is valid;"
           ]
         },
         "validation": {
@@ -649,14 +595,14 @@
           "warnings": [],
           "errors": []
         },
-        "acsl_code": "/*@\n  @ requires \\valid(str);\n  @ requires valid_pointer(str);\n  @ requires is_non_null(str);\n  @ ensures \\result is valid;\n  @ ensures \result >= 0;\n  @ ensures \result <= strlen(str);\n  @ ensures is_valid_index(\result, str);\n  @*/",
+        "acsl_code": "/*@\n  @ requires \\valid(str);\n  @ ensures \\result is valid;\n  @*/",
         "metadata": {
           "category": "memory_management",
-          "ai_enhanced": true,
+          "ai_enhanced": false,
           "template_used": true
         }
       },
-      "annotated_code": "\n#include <stdio.h>\n#include <stdlib.h>\n#include <math.h>\n\n// Array processing with bounds checking\nint array_sum(int arr[], int size) {\n    if (size <= 0 || arr == NULL) return 0;\n    int sum = 0;\n    for (int i = 0; i < size; i++) {\n        sum += arr[i];\n    }\n    return sum;\n}\n\n// String processing\n/*@\n  @ requires \\valid(str);\n  @ requires valid_pointer(str);\n  @ requires is_non_null(str);\n  @ ensures \\result is valid;\n  @ ensures \result >= 0;\n  @ ensures \result <= strlen(str);\n  @ ensures is_valid_index(\result, str);\n  @*/\nint string_length(const char* str) {\n    if (str == NULL) return -1;\n    int len = 0;\n    while (str[len] != '\\0') {\n        len++;\n    }\n    return len;\n}\n\n// Memory management\nvoid* safe_malloc(size_t size) {\n    if (size == 0) return NULL;\n    void* ptr = malloc(size);\n    return ptr;\n}\n\n// Mathematical function with error handling\ndouble safe_sqrt(double x) {\n    if (x < 0.0) return -1.0;\n    if (x == 0.0) return 0.0;\n    return sqrt(x);\n}\n",
+      "annotated_code": "\n#include <stdio.h>\n#include <stdlib.h>\n#include <math.h>\n\n// Array processing with bounds checking\nint array_sum(int arr[], int size) {\n    if (size <= 0 || arr == NULL) return 0;\n    int sum = 0;\n    for (int i = 0; i < size; i++) {\n        sum += arr[i];\n    }\n    return sum;\n}\n\n// String processing\n/*@\n  @ requires \\valid(str);\n  @ ensures \\result is valid;\n  @*/\nint string_length(const char* str) {\n    if (str == NULL) return -1;\n    int len = 0;\n    while (str[len] != '\\0') {\n        len++;\n    }\n    return len;\n}\n\n// Memory management\nvoid* safe_malloc(size_t size) {\n    if (size == 0) return NULL;\n    void* ptr = malloc(size);\n    return ptr;\n}\n\n// Mathematical function with error handling\ndouble safe_sqrt(double x) {\n    if (x < 0.0) return -1.0;\n    if (x == 0.0) return 0.0;\n    return sqrt(x);\n}\n",
       "verification_result": {
         "success": false,
         "return_code": 1,
@@ -744,15 +690,10 @@
         "function_name": "safe_sqrt",
         "contracts": {
           "preconditions": [
-            "requires \\is_finite(x);",
-            "requires double x >= 0;",
-            "requires !is_nan(x);"
+            "requires \\is_finite(x);"
           ],
           "postconditions": [
-            "ensures \\is_finite(\\result);",
-            "ensures result == x <= 0 ? 0 : sqrt(x);",
-            "ensures is_finite(result);",
-            "ensures !is_nan(result);"
+            "ensures \\is_finite(\\result);"
           ]
         },
         "validation": {
@@ -760,14 +701,14 @@
           "warnings": [],
           "errors": []
         },
-        "acsl_code": "/*@\n  @ requires \\is_finite(x);\n  @ requires double x >= 0;\n  @ requires !is_nan(x);\n  @ ensures \\is_finite(\\result);\n  @ ensures result == x <= 0 ? 0 : sqrt(x);\n  @ ensures is_finite(result);\n  @ ensures !is_nan(result);\n  @*/",
+        "acsl_code": "/*@\n  @ requires \\is_finite(x);\n  @ ensures \\is_finite(\\result);\n  @*/",
         "metadata": {
           "category": "mathematical",
-          "ai_enhanced": true,
+          "ai_enhanced": false,
           "template_used": true
         }
       },
-      "annotated_code": "\n#include <stdio.h>\n#include <stdlib.h>\n#include <math.h>\n\n// Array processing with bounds checking\nint array_sum(int arr[], int size) {\n    if (size <= 0 || arr == NULL) return 0;\n    int sum = 0;\n    for (int i = 0; i < size; i++) {\n        sum += arr[i];\n    }\n    return sum;\n}\n\n// String processing\nint string_length(const char* str) {\n    if (str == NULL) return -1;\n    int len = 0;\n    while (str[len] != '\\0') {\n        len++;\n    }\n    return len;\n}\n\n// Memory management\nvoid* safe_malloc(size_t size) {\n    if (size == 0) return NULL;\n    void* ptr = malloc(size);\n    return ptr;\n}\n\n// Mathematical function with error handling\n/*@\n  @ requires \\is_finite(x);\n  @ requires double x >= 0;\n  @ requires !is_nan(x);\n  @ ensures \\is_finite(\\result);\n  @ ensures result == x <= 0 ? 0 : sqrt(x);\n  @ ensures is_finite(result);\n  @ ensures !is_nan(result);\n  @*/\ndouble safe_sqrt(double x) {\n    if (x < 0.0) return -1.0;\n    if (x == 0.0) return 0.0;\n    return sqrt(x);\n}\n",
+      "annotated_code": "\n#include <stdio.h>\n#include <stdlib.h>\n#include <math.h>\n\n// Array processing with bounds checking\nint array_sum(int arr[], int size) {\n    if (size <= 0 || arr == NULL) return 0;\n    int sum = 0;\n    for (int i = 0; i < size; i++) {\n        sum += arr[i];\n    }\n    return sum;\n}\n\n// String processing\nint string_length(const char* str) {\n    if (str == NULL) return -1;\n    int len = 0;\n    while (str[len] != '\\0') {\n        len++;\n    }\n    return len;\n}\n\n// Memory management\nvoid* safe_malloc(size_t size) {\n    if (size == 0) return NULL;\n    void* ptr = malloc(size);\n    return ptr;\n}\n\n// Mathematical function with error handling\n/*@\n  @ requires \\is_finite(x);\n  @ ensures \\is_finite(\\result);\n  @*/\ndouble safe_sqrt(double x) {\n    if (x < 0.0) return -1.0;\n    if (x == 0.0) return 0.0;\n    return sqrt(x);\n}\n",
       "verification_result": {
         "success": false,
         "return_code": 1,
@@ -802,7 +743,7 @@
     "successful_verifications": 4,
     "failed_verifications": 0,
     "success_rate": 1.0,
-    "total_contracts_generated": 18,
+    "total_contracts_generated": 8,
     "overall_status": "completed"
   }
 }
@@ -873,14 +814,10 @@
         "function_name": "test_function_0",
         "contracts": {
           "preconditions": [
-            "requires n is valid;",
-            "requires n >= 0;",
-            "requires n <= INT_MAX;"
+            "requires n is valid;"
           ],
           "postconditions": [
-            "ensures \\result is valid;",
-            "ensures \result == 0 || \result > 0;",
-            "ensures !(((n >= 2) && (n % 3 == 1)) && (\result > 0));"
+            "ensures \\result is valid;"
           ]
         },
         "validation": {
@@ -888,14 +825,14 @@
           "warnings": [],
           "errors": []
         },
-        "acsl_code": "/*@\n  @ requires n is valid;\n  @ requires n >= 0;\n  @ requires n <= INT_MAX;\n  @ ensures \\result is valid;\n  @ ensures \result == 0 || \result > 0;\n  @ ensures !(((n >= 2) && (n % 3 == 1)) && (\result > 0));\n  @*/",
+        "acsl_code": "/*@\n  @ requires n is valid;\n  @ ensures \\result is valid;\n  @*/",
         "metadata": {
           "category": "general",
-          "ai_enhanced": true,
+          "ai_enhanced": false,
           "template_used": true
         }
       },
-      "annotated_code": "/*@\n  @ requires n is valid;\n  @ requires n >= 0;\n  @ requires n <= INT_MAX;\n  @ ensures \\result is valid;\n  @ ensures \result == 0 || \result > 0;\n  @ ensures !(((n >= 2) && (n % 3 == 1)) && (\result > 0));\n  @*/\nint test_function_0(int n) { return n * 1; }\nint test_function_1(int n) { return n * 2; }\nint test_function_2(int n) { return n * 3; }\nint test_function_3(int n) { return n * 4; }\nint test_function_4(int n) { return n * 5; }",
+      "annotated_code": "/*@\n  @ requires n is valid;\n  @ ensures \\result is valid;\n  @*/\nint test_function_0(int n) { return n * 1; }\nint test_function_1(int n) { return n * 2; }\nint test_function_2(int n) { return n * 3; }\nint test_function_3(int n) { return n * 4; }\nint test_function_4(int n) { return n * 5; }",
       "verification_result": {
         "success": false,
         "return_code": 1,
@@ -931,14 +868,10 @@
         "function_name": "test_function_1",
         "contracts": {
           "preconditions": [
-            "requires n is valid;",
-            "requires n >= 0;",
-            "requires n <= INT_MAX;"
+            "requires n is valid;"
           ],
           "postconditions": [
-            "ensures \\result is valid;",
-            "ensures \result >= 0;",
-            "ensures 0 <= \result && \result <= n * (n + 1) / 2;"
+            "ensures \\result is valid;"
           ]
         },
         "validation": {
@@ -946,14 +879,14 @@
           "warnings": [],
           "errors": []
         },
-        "acsl_code": "/*@\n  @ requires n is valid;\n  @ requires n >= 0;\n  @ requires n <= INT_MAX;\n  @ ensures \\result is valid;\n  @ ensures \result >= 0;\n  @ ensures 0 <= \result && \result <= n * (n + 1) / 2;\n  @*/",
+        "acsl_code": "/*@\n  @ requires n is valid;\n  @ ensures \\result is valid;\n  @*/",
         "metadata": {
           "category": "general",
-          "ai_enhanced": true,
+          "ai_enhanced": false,
           "template_used": true
         }
       },
-      "annotated_code": "int test_function_0(int n) { return n * 1; }\n/*@\n  @ requires n is valid;\n  @ requires n >= 0;\n  @ requires n <= INT_MAX;\n  @ ensures \\result is valid;\n  @ ensures \result >= 0;\n  @ ensures 0 <= \result && \result <= n * (n + 1) / 2;\n  @*/\nint test_function_1(int n) { return n * 2; }\nint test_function_2(int n) { return n * 3; }\nint test_function_3(int n) { return n * 4; }\nint test_function_4(int n) { return n * 5; }",
+      "annotated_code": "int test_function_0(int n) { return n * 1; }\n/*@\n  @ requires n is valid;\n  @ ensures \\result is valid;\n  @*/\nint test_function_1(int n) { return n * 2; }\nint test_function_2(int n) { return n * 3; }\nint test_function_3(int n) { return n * 4; }\nint test_function_4(int n) { return n * 5; }",
       "verification_result": {
         "success": false,
         "return_code": 1,
@@ -989,15 +922,10 @@
         "function_name": "test_function_2",
         "contracts": {
           "preconditions": [
-            "requires n is valid;",
-            "requires n >= 0;",
-            "requires n <= INT_MAX;"
+            "requires n is valid;"
           ],
           "postconditions": [
-            "ensures \\result is valid;",
-            "ensures \result >= 0;",
-            "ensures \result <= INT_MAX;",
-            "ensures memory_not_modified();"
+            "ensures \\result is valid;"
           ]
         },
         "validation": {
@@ -1005,14 +933,14 @@
           "warnings": [],
           "errors": []
         },
-        "acsl_code": "/*@\n  @ requires n is valid;\n  @ requires n >= 0;\n  @ requires n <= INT_MAX;\n  @ ensures \\result is valid;\n  @ ensures \result >= 0;\n  @ ensures \result <= INT_MAX;\n  @ ensures memory_not_modified();\n  @*/",
+        "acsl_code": "/*@\n  @ requires n is valid;\n  @ ensures \\result is valid;\n  @*/",
         "metadata": {
           "category": "general",
-          "ai_enhanced": true,
+          "ai_enhanced": false,
           "template_used": true
         }
       },
-      "annotated_code": "int test_function_0(int n) { return n * 1; }\nint test_function_1(int n) { return n * 2; }\n/*@\n  @ requires n is valid;\n  @ requires n >= 0;\n  @ requires n <= INT_MAX;\n  @ ensures \\result is valid;\n  @ ensures \result >= 0;\n  @ ensures \result <= INT_MAX;\n  @ ensures memory_not_modified();\n  @*/\nint test_function_2(int n) { return n * 3; }\nint test_function_3(int n) { return n * 4; }\nint test_function_4(int n) { return n * 5; }",
+      "annotated_code": "int test_function_0(int n) { return n * 1; }\nint test_function_1(int n) { return n * 2; }\n/*@\n  @ requires n is valid;\n  @ ensures \\result is valid;\n  @*/\nint test_function_2(int n) { return n * 3; }\nint test_function_3(int n) { return n * 4; }\nint test_function_4(int n) { return n * 5; }",
       "verification_result": {
         "success": false,
         "return_code": 1,
@@ -1048,14 +976,10 @@
         "function_name": "test_function_3",
         "contracts": {
           "preconditions": [
-            "requires n is valid;",
-            "requires n >= 0;",
-            "requires n <= INT_MAX;"
+            "requires n is valid;"
           ],
           "postconditions": [
-            "ensures \\result is valid;",
-            "ensures \result >= 0;",
-            "ensures (\result == 1) || (\result == -1);"
+            "ensures \\result is valid;"
           ]
         },
         "validation": {
@@ -1063,14 +987,14 @@
           "warnings": [],
           "errors": []
         },
-        "acsl_code": "/*@\n  @ requires n is valid;\n  @ requires n >= 0;\n  @ requires n <= INT_MAX;\n  @ ensures \\result is valid;\n  @ ensures \result >= 0;\n  @ ensures (\result == 1) || (\result == -1);\n  @*/",
+        "acsl_code": "/*@\n  @ requires n is valid;\n  @ ensures \\result is valid;\n  @*/",
         "metadata": {
           "category": "general",
-          "ai_enhanced": true,
+          "ai_enhanced": false,
           "template_used": true
         }
       },
-      "annotated_code": "int test_function_0(int n) { return n * 1; }\nint test_function_1(int n) { return n * 2; }\nint test_function_2(int n) { return n * 3; }\n/*@\n  @ requires n is valid;\n  @ requires n >= 0;\n  @ requires n <= INT_MAX;\n  @ ensures \\result is valid;\n  @ ensures \result >= 0;\n  @ ensures (\result == 1) || (\result == -1);\n  @*/\nint test_function_3(int n) { return n * 4; }\nint test_function_4(int n) { return n * 5; }",
+      "annotated_code": "int test_function_0(int n) { return n * 1; }\nint test_function_1(int n) { return n * 2; }\nint test_function_2(int n) { return n * 3; }\n/*@\n  @ requires n is valid;\n  @ ensures \\result is valid;\n  @*/\nint test_function_3(int n) { return n * 4; }\nint test_function_4(int n) { return n * 5; }",
       "verification_result": {
         "success": false,
         "return_code": 1,
@@ -1106,14 +1030,10 @@
         "function_name": "test_function_4",
         "contracts": {
           "preconditions": [
-            "requires n is valid;",
-            "requires n >= 0;",
-            "requires n <= INT_MAX;"
+            "requires n is valid;"
           ],
           "postconditions": [
-            "ensures \\result is valid;",
-            "ensures \result == 0 || (\result > 0 && (n > 1));",
-            "ensures !*(&n) == *(&n + 1);"
+            "ensures \\result is valid;"
           ]
         },
         "validation": {
@@ -1121,14 +1041,14 @@
           "warnings": [],
           "errors": []
         },
-        "acsl_code": "/*@\n  @ requires n is valid;\n  @ requires n >= 0;\n  @ requires n <= INT_MAX;\n  @ ensures \\result is valid;\n  @ ensures \result == 0 || (\result > 0 && (n > 1));\n  @ ensures !*(&n) == *(&n + 1);\n  @*/",
+        "acsl_code": "/*@\n  @ requires n is valid;\n  @ ensures \\result is valid;\n  @*/",
         "metadata": {
           "category": "general",
-          "ai_enhanced": true,
+          "ai_enhanced": false,
           "template_used": true
         }
       },
-      "annotated_code": "int test_function_0(int n) { return n * 1; }\nint test_function_1(int n) { return n * 2; }\nint test_function_2(int n) { return n * 3; }\nint test_function_3(int n) { return n * 4; }\n/*@\n  @ requires n is valid;\n  @ requires n >= 0;\n  @ requires n <= INT_MAX;\n  @ ensures \\result is valid;\n  @ ensures \result == 0 || (\result > 0 && (n > 1));\n  @ ensures !*(&n) == *(&n + 1);\n  @*/\nint test_function_4(int n) { return n * 5; }",
+      "annotated_code": "int test_function_0(int n) { return n * 1; }\nint test_function_1(int n) { return n * 2; }\nint test_function_2(int n) { return n * 3; }\nint test_function_3(int n) { return n * 4; }\n/*@\n  @ requires n is valid;\n  @ ensures \\result is valid;\n  @*/\nint test_function_4(int n) { return n * 5; }",
       "verification_result": {
         "success": false,
         "return_code": 1,
@@ -1163,7 +1083,7 @@
     "successful_verifications": 5,
     "failed_verifications": 0,
     "success_rate": 1.0,
-    "total_contracts_generated": 31,
+    "total_contracts_generated": 10,
     "overall_status": "completed"
   }
 }

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Code Debugger</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .status-bar {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #28a745;
+            animation: pulse 2s infinite;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .panel {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid #e9ecef;
+        }
+
+        .panel h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .file-input-area {
+            border: 3px dashed #667eea;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .file-input-area:hover {
+            background: #f0f3ff;
+            border-color: #764ba2;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            grid-column: 1 / -1;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .code-preview {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            font-size: 13px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .results-panel {
+            grid-column: 1 / -1;
+            display: none;
+        }
+
+        .results-panel.active {
+            display: block;
+        }
+
+        .result-section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .metric-card .value {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .issue-item {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .recommendation-item {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .status-badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 AI-Powered Code Debugger</h1>
+            <p>Module 1: Intelligent Debugging with LLM Integration</p>
+        </div>
+
+        <div class="status-bar">
+            <div>
+                <span class="status-dot"></span>
+                <span id="backendStatus">Connecting to backend...</span>
+            </div>
+            <div>
+                <span id="ollamaStatus">Ollama: Checking...</span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="panel">
+                <h2>📁 Upload Code File</h2>
+                <div class="file-input-area" onclick="document.getElementById('fileInput').click()">
+                    <input type="file" id="fileInput" accept=".c,.cpp,.h">
+                    <p style="font-size: 3em; margin-bottom: 10px;">📄</p>
+                    <p style="font-size: 1.2em; color: #667eea; font-weight: 600;">Click to Upload C/C++ File</p>
+                </div>
+                <div id="fileName" style="color: #28a745; font-weight: 600; text-align: center;"></div>
+            </div>
+
+            <div class="panel">
+                <h2>⚙️ Analysis Options</h2>
+                <label style="display: block; margin-bottom: 15px; font-weight: 600;">
+                    <input type="checkbox" id="staticAnalysis" checked style="margin-right: 10px;">
+                    Static Code Analysis
+                </label>
+                <label style="display: block; margin-bottom: 15px; font-weight: 600;">
+                    <input type="checkbox" id="aiAnalysis" checked style="margin-right: 10px;">
+                    AI-Powered Analysis (Ollama)
+                </label>
+                <button class="btn" id="analyzeBtn" disabled>
+                    🚀 Start Analysis
+                </button>
+            </div>
+
+            <div class="panel" style="grid-column: 1 / -1;">
+                <h2>💻 Code Preview</h2>
+                <div id="codePreview" class="code-preview">No code loaded yet...</div>
+            </div>
+
+            <div class="loading" id="loadingIndicator">
+                <div class="spinner"></div>
+                <p style="font-size: 1.2em; color: #667eea; font-weight: 600;">Analyzing your code...</p>
+                <p style="color: #6c757d; margin-top: 10px;">This may take 30-60 seconds with Ollama</p>
+            </div>
+
+            <div class="panel results-panel" id="resultsPanel">
+                <h2>📊 Analysis Results</h2>
+                
+                <div class="result-section">
+                    <h3>Code Metrics</h3>
+                    <div class="metrics-grid" id="metricsGrid"></div>
+                </div>
+
+                <div class="result-section">
+                    <h3>Static Analysis Issues</h3>
+                    <ul id="issuesList" style="list-style: none; padding: 0;"></ul>
+                </div>
+
+                <div class="result-section">
+                    <h3>Compilation Status</h3>
+                    <div id="compilationStatus"></div>
+                </div>
+
+                <div class="result-section">
+                    <h3>AI Analysis</h3>
+                    <div id="aiAnalysisDetails"></div>
+                </div>
+
+                <div class="result-section">
+                    <h3>Recommendations</h3>
+                    <ul id="recommendationsList" style="list-style: none; padding: 0;"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:5000';
+        let currentFile = null;
+
+        // Check backend status
+        async function checkBackend() {
+            try {
+                const response = await fetch(`${API_URL}/api/health`);
+                const data = await response.json();
+                document.getElementById('backendStatus').textContent = '✓ Backend Connected';
+                document.getElementById('ollamaStatus').textContent = data.ollama_configured ? '✓ Ollama Ready' : '✗ Ollama Not Configured';
+            } catch (error) {
+                document.getElementById('backendStatus').textContent = '✗ Backend Offline';
+                document.getElementById('ollamaStatus').textContent = '✗ Cannot Check';
+            }
+        }
+
+        // File upload handler
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                currentFile = file;
+                document.getElementById('fileName').textContent = `✓ ${file.name}`;
+                document.getElementById('analyzeBtn').disabled = false;
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('codePreview').textContent = e.target.result;
+                };
+                reader.readAsText(file);
+            }
+        });
+
+        // Analyze button
+        document.getElementById('analyzeBtn').addEventListener('click', async function() {
+            if (!currentFile) return;
+
+            const formData = new FormData();
+            formData.append('file', currentFile);
+
+            document.getElementById('loadingIndicator').classList.add('active');
+            document.getElementById('resultsPanel').classList.remove('active');
+            this.disabled = true;
+
+            try {
+                const response = await fetch(`${API_URL}/api/analyze`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Server error: ${response.status}`);
+                }
+
+                const result = await response.json();
+                displayResults(result);
+            } catch (error) {
+                alert('Error: ' + error.message + '\n\nMake sure:\n1. Backend is running (python flask_backend.py)\n2. Ollama is running (ollama serve)');
+            } finally {
+                document.getElementById('loadingIndicator').classList.remove('active');
+                this.disabled = false;
+            }
+        });
+
+        function displayResults(data) {
+            document.getElementById('resultsPanel').classList.add('active');
+            
+            // Metrics
+            const static_analysis = data.static_analysis || {};
+            const metrics = static_analysis.code_metrics || {};
+            document.getElementById('metricsGrid').innerHTML = `
+                <div class="metric-card">
+                    <div class="value">${static_analysis.line_count || 0}</div>
+                    <div class="label">Lines of Code</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">${static_analysis.function_count || 0}</div>
+                    <div class="label">Functions</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">${metrics.cyclomatic_complexity || 0}</div>
+                    <div class="label">Complexity</div>
+                </div>
+                <div class="metric-card">
+                    <div class="value">${((metrics.comment_ratio || 0) * 100).toFixed(1)}%</div>
+                    <div class="label">Comments</div>
+                </div>
+            `;
+
+            // Issues
+            const issues = static_analysis.potential_issues || [];
+            document.getElementById('issuesList').innerHTML = issues.length > 0
+                ? issues.map(issue => `<li class="issue-item">⚠️ ${issue}</li>`).join('')
+                : '<p style="color: #28a745;">No issues found!</p>';
+
+            // Compilation
+            const compile = data.compilation_analysis || {};
+            const badge = compile.compilation_successful
+                ? '<span class="status-badge status-success">✓ Success</span>'
+                : '<span class="status-badge status-error">✗ Failed</span>';
+            document.getElementById('compilationStatus').innerHTML = badge;
+
+            // AI Analysis
+            const ai = data.ai_analysis || {};
+            document.getElementById('aiAnalysisDetails').innerHTML = `
+                <p><strong>Root Cause:</strong> ${ai.root_cause || 'N/A'}</p>
+                ${ai.fix_suggestions ? `<p style="margin-top: 15px;"><strong>Fixes:</strong></p><ol>${ai.fix_suggestions.map(f => `<li>${f}</li>`).join('')}</ol>` : ''}
+                ${ai.confidence ? `<p style="margin-top: 15px;"><strong>Confidence:</strong> ${(ai.confidence * 100).toFixed(0)}%</p>` : ''}
+            `;
+
+            // Recommendations
+            const recs = data.recommendations || [];
+            document.getElementById('recommendationsList').innerHTML = recs.length > 0
+                ? recs.map(r => `<li class="recommendation-item"><strong>${r.priority.toUpperCase()}:</strong> ${r.description}</li>`).join('')
+                : '<p>No recommendations</p>';
+
+            document.getElementById('resultsPanel').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize
+        checkBackend();
+        setInterval(checkBackend, 30000);
+    </script>
+</body>
+</html>
