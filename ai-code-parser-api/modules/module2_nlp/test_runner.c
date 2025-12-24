@@ -6,88 +6,152 @@
 #include <math.h>
 
 // === Forward Declarations ===
-int binary_search(int arr[], int size, int target);
-float calculate_average(float numbers[], int count);
+int is_prime(int n);
+int gcd(int a, int b);
+int lcm(int a, int b);
+int power(int base, int exp);
 
-// Unit tests for binary_search from user_code.c
-void test_binary_search_user_code() {
-    printf("\n=== Testing binary_search from user_code.c ===\n");
+// Unit tests for is_prime from user_code.c
+void test_is_prime_user_code() {
+    printf("\n=== Testing is_prime from user_code.c ===\n");
     int passed = 0, total = 0;
 
     // Functional Tests
-    // Test binary_search with valid integer arr[]
-    printf("TODO: Test binary_search with valid integer arr[]\n");
-    // passed++; total++; // Uncomment when implemented
-
-    // Test binary_search with valid integer size
-    printf("TODO: Test binary_search with valid integer size\n");
-    // passed++; total++; // Uncomment when implemented
-
-    // Test binary_search with valid integer target
-    printf("TODO: Test binary_search with valid integer target\n");
+    // Test is_prime with valid integer n
+    printf("TODO: Test is_prime with valid integer n\n");
     // passed++; total++; // Uncomment when implemented
 
     // Boundary Tests
-    // Test binary_search with arr[] = 0
-    printf("TODO: Test binary_search with arr[] = 0\n");
-    // passed++; total++; // Uncomment when implemented
-
-    // Test binary_search with size = 0
-    printf("TODO: Test binary_search with size = 0\n");
-    // passed++; total++; // Uncomment when implemented
-
-    // Test binary_search with target = 0
-    printf("TODO: Test binary_search with target = 0\n");
+    // Test is_prime with n = 0
+    printf("TODO: Test is_prime with n = 0\n");
     // passed++; total++; // Uncomment when implemented
 
     // Error Tests
-    // Test binary_search with negative arr[]
-    printf("TODO: Test binary_search with negative arr[]\n");
-    // passed++; total++; // Uncomment when implemented
-
-    // Test binary_search with negative size
-    printf("TODO: Test binary_search with negative size\n");
-    // passed++; total++; // Uncomment when implemented
-
-    // Test binary_search with negative target
-    printf("TODO: Test binary_search with negative target\n");
+    // Test is_prime with negative n
+    printf("TODO: Test is_prime with negative n\n");
     // passed++; total++; // Uncomment when implemented
 
     // Performance Tests
-    printf("Function binary_search: %d/%d tests passed\n", passed, total);
+    printf("Function is_prime: %d/%d tests passed\n", passed, total);
 }
 
-// Unit tests for calculate_average from user_code.c
-void test_calculate_average_user_code() {
-    printf("\n=== Testing calculate_average from user_code.c ===\n");
+// Unit tests for gcd from user_code.c
+void test_gcd_user_code() {
+    printf("\n=== Testing gcd from user_code.c ===\n");
     int passed = 0, total = 0;
 
     // Functional Tests
-    // Test calculate_average with valid integer count
-    printf("TODO: Test calculate_average with valid integer count\n");
+    // Test gcd with valid integer a
+    printf("TODO: Test gcd with valid integer a\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Test gcd with valid integer b
+    printf("TODO: Test gcd with valid integer b\n");
     // passed++; total++; // Uncomment when implemented
 
     // Boundary Tests
-    // Test calculate_average with count = 0
-    printf("TODO: Test calculate_average with count = 0\n");
+    // Test gcd with a = 0
+    printf("TODO: Test gcd with a = 0\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Test gcd with b = 0
+    printf("TODO: Test gcd with b = 0\n");
     // passed++; total++; // Uncomment when implemented
 
     // Error Tests
-    // Test calculate_average with negative count
-    printf("TODO: Test calculate_average with negative count\n");
+    // Test gcd with negative a
+    printf("TODO: Test gcd with negative a\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Test gcd with negative b
+    printf("TODO: Test gcd with negative b\n");
     // passed++; total++; // Uncomment when implemented
 
     // Performance Tests
-    printf("Function calculate_average: %d/%d tests passed\n", passed, total);
+    printf("Function gcd: %d/%d tests passed\n", passed, total);
+}
+
+// Unit tests for lcm from user_code.c
+void test_lcm_user_code() {
+    printf("\n=== Testing lcm from user_code.c ===\n");
+    int passed = 0, total = 0;
+
+    // Functional Tests
+    // Test lcm with valid integer a
+    printf("TODO: Test lcm with valid integer a\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Test lcm with valid integer b
+    printf("TODO: Test lcm with valid integer b\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Boundary Tests
+    // Test lcm with a = 0
+    printf("TODO: Test lcm with a = 0\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Test lcm with b = 0
+    printf("TODO: Test lcm with b = 0\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Error Tests
+    // Test lcm with negative a
+    printf("TODO: Test lcm with negative a\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Test lcm with negative b
+    printf("TODO: Test lcm with negative b\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Performance Tests
+    printf("Function lcm: %d/%d tests passed\n", passed, total);
+}
+
+// Unit tests for power from user_code.c
+void test_power_user_code() {
+    printf("\n=== Testing power from user_code.c ===\n");
+    int passed = 0, total = 0;
+
+    // Functional Tests
+    // Test power with valid integer base
+    printf("TODO: Test power with valid integer base\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Test power with valid integer exp
+    printf("TODO: Test power with valid integer exp\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Boundary Tests
+    // Test power with base = 0
+    printf("TODO: Test power with base = 0\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Test power with exp = 0
+    printf("TODO: Test power with exp = 0\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Error Tests
+    // Test power with negative base
+    printf("TODO: Test power with negative base\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Test power with negative exp
+    printf("TODO: Test power with negative exp\n");
+    // passed++; total++; // Uncomment when implemented
+
+    // Performance Tests
+    printf("Function power: %d/%d tests passed\n", passed, total);
 }
 
 void run_all_tests() {
     printf("=== Enhanced C Function Test Runner ===\n");
     printf("Generated by NLP Test Generator\n");
-    printf("Functions discovered: 2\n\n");
+    printf("Functions discovered: 4\n\n");
 
-    test_binary_search_user_code();
-    test_calculate_average_user_code();
+    test_is_prime_user_code();
+    test_gcd_user_code();
+    test_lcm_user_code();
+    test_power_user_code();
 
     printf("\n=== Test Summary Complete ===\n");
 }
